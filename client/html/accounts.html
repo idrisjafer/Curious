@@ -1,0 +1,22 @@
+<template name="login">
+  <!--<a href="#" id="fb-login">Login with Facebook</a>-->
+	<form id="login-form" action="action">
+	   <input type="email" id="login-email" placeholder="Email" />
+	   <input type="password" id="login-password" placeholder="Wachtwoord" />
+	   <input type="submit" id="login-button" value="Inloggen" />
+	   <div class="error">{{login_error}}</div>
+	 </form>
+</template>
+
+<template name="logged_in">
+	<span>Je bent ingelogd als: {{user_name}}</span>
+	<a href="#" id="logout">Logout</a>
+</template>
+
+<template name="register">
+	<form id="register-form" action="action">
+		<input type="email" id="account-email">
+		<input type="password" id="account-password">
+		<input type="submit" id="create-account" value="Create an account" />
+	</form>
+</template>
