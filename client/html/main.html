@@ -1,0 +1,29 @@
+<head>
+  <title>Curious</title>
+</head>
+
+<body>
+	<div class="status-bar"></div>
+	<div class="wrapper">{{renderPage}}</div>
+</body>
+
+<template name="login_screen">
+	<div class="user-panel">
+		{{> login}}
+		{{> register}}
+	</div>
+</template>
+
+<template name="home_screen">
+	<div class="user-panel">
+		{{> logged_in}}
+	</div>
+</template>
+
+<template name="back_end">
+	<div class="back-end">
+		{{> add_product}}
+	</div>
+</template>
+
+<!-- test -->
