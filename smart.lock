@@ -2,13 +2,19 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "router": {}
+      "router": {},
+      "filepicker": {}
     },
     "packages": {
       "router": {
         "git": "https://github.com/tmeasday/meteor-router.git",
         "tag": "v0.5.4.1",
         "commit": "d00e380dda2184b70e909fc4a0fb5358d602c586"
+      },
+      "filepicker": {
+        "git": "https://github.com/Ink/meteor.git",
+        "tag": "v0.4.0",
+        "commit": "20d56aaaf48be3a5c0499547a495a6463b4fa3d9"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",

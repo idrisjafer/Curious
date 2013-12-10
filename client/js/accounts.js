@@ -19,7 +19,7 @@ Template.login.events({
   },
 
   /*
-  'click #fb-login' : function(e, t) {
+  'click .fb-login' : function(e, t) {
       e.preventDefault();
       Meteor.loginWithFacebook(function(err){
         if (err){
@@ -78,3 +78,20 @@ Template.register.events({
   }
 
 });
+
+$(document).ready(function(){
+  if($('.login')){
+    $('.status-bar').hide();
+  }
+  else{
+    $('.status-bar').show();
+  }
+  showLogin();
+});
+
+function showLogin(){
+  $('.show-login').click(function(){
+    $('#login-form').removeClass('hidden');
+    $('.register-buttons').addClass('hidden');
+  });
+}

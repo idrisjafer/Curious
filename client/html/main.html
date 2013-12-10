@@ -1,5 +1,7 @@
 <head>
   <title>Curious</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -8,22 +10,21 @@
 </body>
 
 <template name="login_screen">
-	<div class="user-panel">
+	<div class="login">
 		{{> login}}
-		{{> register}}
 	</div>
 </template>
 
 <template name="home_screen">
-	<div class="user-panel">
+	<div class="home">
 		{{> logged_in}}
 	</div>
 </template>
 
-<template name="back_end">
-	<div class="back-end">
+<template name="admin_screen">
+	<div class="admin">
+		{{> logged_in}}
+		{{> register_maker}}
 		{{> add_product}}
 	</div>
 </template>
-
-<!-- test -->

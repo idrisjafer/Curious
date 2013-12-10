@@ -2,7 +2,7 @@ if (Meteor.isClient) {
   Meteor.Router.add({
     '/': 'home_screen',
     '/home': 'home_screen',
-    '/backend': 'back_end'
+    '/admin': 'admin_screen'
   });
 
   Meteor.Router.filters({

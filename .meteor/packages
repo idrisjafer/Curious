@@ -13,3 +13,5 @@ accounts-base
 accounts-password
 accounts-ui-unstyled
 router
+accounts-ui
+filepicker

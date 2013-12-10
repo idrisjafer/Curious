@@ -11,8 +11,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -23,13 +23,135 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+a{
+	color: #1672B5;
+	text-decoration: none;
+}
+
+html{
+	background-color: #000;
+}
+
+body{
+	width: 1024px;
+	margin: 0 auto;
+	font: 15px/22px 'Open Sans', Arial, sans-serif;
+	color: #203C50;
+	background-color: #fff;
+}
+
 .status-bar{
 	height: 64px;
-	background: #b18557;
+	background: #F7F7F7;
 }
-/*
-input,
-textarea{
+
+/* LOGIN */
+.login{
+	background-image: url('/bg-login.png');
+	height: 768px;
+	padding-top: 158px;
+}
+
+.login > div{
+	width: 450px;
+	background-color: #FFFEFF;
+	border-radius: 2px;
+	border: 1px solid #D4D3D4;
+	padding: 0 20px;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.login > div h2{
+	font: 400 36px/50px 'Merriweather', sans-serif;
+	text-align: center;
+	padding: 33px 0 15px 0;
+}
+
+.login > div h3{
+	font: 100 16px/16px 'Merriweather', sans-serif;
+	font-style: italic;
+	padding: 36px 0;
 	display: block;
+}
+
+.login > div .show-login{
+	padding: 35px 0;
+	text-align: center;
+	display: block;
+}
+
+.fb-login,
+.email-login,
+#login-button{
+	display: block;
+	border-radius: 2px;
+	height: 62px;
+	margin-top: 22px;
+	font-size: 21px;
+	line-height: 62px;
+	color: #fff;
+	text-align: center;
+	width: 370px;
+	margin: 20px auto 0 auto;
+	background-color: #B8B8B8;
+}
+
+#login-button{
 	width: 100%;
-}*/
+	background-color: #1672B5;
+}
+
+.fb-login{
+	background-image: url('/icon-fblogin.png');
+	background-position: 20px center;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	background-color: #3B5798;
+}
+
+.login input{
+	border: none;
+	background-color: transparent;
+	height: 54px;
+	width: 100%;
+	font: 14px/20px 'Open Sans', Arial, sans-serif;
+}
+
+.login #login-email{
+	border-bottom: 1px solid #EBEAEB;
+}
+
+.login input:focus{
+	outline: none;
+}
+
+.login input:-webkit-autofill {
+    background-color: transparent !important;
+}
+
+#login-form{
+	width: 408px;
+	position: absolute;
+	top: 0;
+	left: 20px;
+	transition: all .7s ease-in-out;
+	opacity: 1;
+	padding: 0 19px;
+}
+
+#login-form.hidden{
+	-webkit-transform: translate(450px, 0);
+	opacity: 0;
+}
+
+.register-buttons{
+	transition: all .7s ease-in-out;
+	opacity: 1;
+}
+
+.register-buttons.hidden{
+	-webkit-transform: translate(-450px, 0);
+	opacity: 0;
+}

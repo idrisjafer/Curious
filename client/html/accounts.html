@@ -1,11 +1,8 @@
 <template name="login">
-  <!--<a href="#" id="fb-login">Login with Facebook</a>-->
-	<form id="login-form" action="action">
-	   <input type="email" id="login-email" placeholder="Email" />
-	   <input type="password" id="login-password" placeholder="Wachtwoord" />
-	   <input type="submit" id="login-button" value="Inloggen" />
-	   <div class="error">{{login_error}}</div>
-	 </form>
+  	<div>
+  		{{> register_buttons}}
+  		{{> login_form}}
+	</div>
 </template>
 
 <template name="logged_in">
@@ -19,4 +16,23 @@
 		<input type="password" id="account-password">
 		<input type="submit" id="create-account" value="Create an account" />
 	</form>
+</template>
+
+<template name="login_form">
+	<form id="login-form" class="hidden" action="action">
+		<h2>Inloggen</h2>
+		<input type="email" id="login-email" placeholder="Email" autocomplete="off"/>
+		<input type="password" id="login-password" placeholder="Wachtwoord" autocomplete="off"/>
+		<input type="submit" id="login-button" value="Inloggen" />
+		<div class="error">{{login_error}}</div>
+	</form>
+</template>
+
+<template name="register_buttons">
+	<div class="register-buttons">
+	 	<h2>Aanmelden</h2>
+		<a href="#" class="fb-login">Meld je aan met Facebook</a>
+		<a href="#" class="email-login">Meld je aan met Email</a>
+		<a href="#" class="show-login">Ik heb al een account</a>
+	</div>
 </template>
