@@ -1,0 +1,38 @@
+<template name="product_coverphoto">
+	<div class="coverphoto">
+		<img src="{{picture1}}" />
+		<div class="info">
+			<h3 class="title">{{title}}</h3>
+			<p class="short-description">{{shortdescription}}</p>
+			<p class="made-on"><em>Gemaakt op:</em> {{madeon}}</p>
+			<p class="production-time"><em>Productietijd:</em> {{productiontime}}</p>
+			<p class="material"><em>Materiaal:</em> {{material}}</p>
+		</div>
+	</div>
+</template>
+
+<template name="product_photo">
+	{{#if picture2}}
+	<div class="photo">
+		<img src="{{picture2}}" />
+	</div>
+	{{/if}}
+	{{#if picture3}}
+	<div class="photo">
+		<img src="{{picture3}}" />
+	</div>
+	{{/if}}
+</template>
+
+<template name="product_meta">
+	<div class="meta">
+		<h3 class="title">{{title}}</h3>
+		<p class="short-description">{{shortdescription}}</p>
+		<p class="full-description">{{description}}</p>
+		<span class="maker-email">{{maker}}</span>
+		<p class="size"><em>Afmetingen:</em> {{length}} x {{width}} x {{height}}</p>
+		<p class="made-on"><em>Gemaakt op:</em> {{madeon}}</p>
+		<p class="production-time"><em>Productietijd:</em> {{productiontime}}</p>
+		<p class="material"><em>Materiaal:</em> {{material}}</p>
+	</div>
+</template>

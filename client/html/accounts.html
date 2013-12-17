@@ -2,37 +2,45 @@
   	<div>
   		{{> register_buttons}}
   		{{> login_form}}
+  		{{> register}}
 	</div>
 </template>
 
 <template name="logged_in">
 	<span>Je bent ingelogd als: {{user_name}}</span>
-	<a href="#" id="logout">Logout</a>
+	<a id="logout">Logout</a>
 </template>
 
 <template name="register">
-	<form id="register-form" action="action">
-		<input type="email" id="account-email">
-		<input type="password" id="account-password">
-		<input type="submit" id="create-account" value="Create an account" />
+	<form id="register-form" class="hidden" action="action">
+		<h2>Vul uw gegevens in</h2>
+		<div>
+			<input type="email" id="account-email" placeholder="Email" autocomplete="off">
+			<input type="password" id="account-password" placeholder="Wachtwoord" autocomplete="off">
+		</div>
+		<input type="submit" id="create-account" value="Aanmelden" />
+		<a class="annuleren">Annuleren</a>
 	</form>
 </template>
 
 <template name="login_form">
-	<form id="login-form" class="hidden" action="action">
+	<form id="login-form" class="hidden" action="action" autocomplete="off">
 		<h2>Inloggen</h2>
-		<input type="email" id="login-email" placeholder="Email" autocomplete="off"/>
-		<input type="password" id="login-password" placeholder="Wachtwoord" autocomplete="off"/>
-		<input type="submit" id="login-button" value="Inloggen" />
-		<div class="error">{{login_error}}</div>
+		<div>
+			<input type="email" id="login-email" placeholder="Email" autocomplete="off"/>
+			<input type="password" id="login-password" placeholder="Wachtwoord" autocomplete="off"/>
+		</div>
+			<input type="submit" id="login-button" value="Inloggen" />
+			<a class="annuleren">Annuleren</a>
+			<span class="error">{{login_error}}</span>
 	</form>
 </template>
 
 <template name="register_buttons">
 	<div class="register-buttons">
 	 	<h2>Aanmelden</h2>
-		<a href="#" class="fb-login">Meld je aan met Facebook</a>
-		<a href="#" class="email-login">Meld je aan met Email</a>
-		<a href="#" class="show-login">Ik heb al een account</a>
+		<a class="fb-login">Meld je aan met Facebook</a>
+		<a class="email-login">Meld je aan met Email</a>
+		<a class="show-login">Ik heb al een account</a>
 	</div>
 </template>

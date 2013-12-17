@@ -1,0 +1,31 @@
+BENODIGDE INFORMATIE
+	* Welke categorieën komen er onder de producten?
+	* Hoe loopt de flow van de applicatie, met name de productpagina?
+	* Welke informatie over het product moet er aanwezig zijn op de productpagina?
+	* Welke informatie over de maker moet er aanwezig zijn op de makerpagina?
+
+PRODUCTPAGINA:
+	On small scroll on photo:
+		* Titel van product
+		* Materiaal
+		* Productietijd
+		* Gemaakt op
+		* Korte beschrijving (2-3 regels)
+	Detail:
+		* Helemaal geen details
+	Mega Detail pagina:
+		* Foto maker
+		* Naam van de maker
+		* Eerste paar regels van zijn profiel
+		* Zijn smaak tags
+		* Button naar maker
+		* Titel product
+		* Lange beschrijving product
+		* Materiaal
+		* Afmetingen (lbh)
+		* Productietijd
+		* Gemaakt op
+
+REQUESTS VAN JORGE:
+	* Opzij scrollen bij productpagina's
+	* Naar boven vloeiende scroll, naar beneden scroll per foto

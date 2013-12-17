@@ -9,6 +9,7 @@ Template.login.events({
     Meteor.loginWithPassword(email, password, function(err){
       if (err){
         Session.set('login_error', 'Error: ' + err.reason);
+        alert(err.reason);
       }
       else{
         Session.set('login_error', '');
@@ -17,6 +18,21 @@ Template.login.events({
 
     return false;
   },
+  'click .show-login' : function(e){
+    e.preventDefault();
+    $('#login-form').removeClass('hidden');
+    $('.register-buttons').addClass('hidden');
+  },
+  'click .email-login' : function(e){
+    e.preventDefault();
+    $('#register-form').removeClass('hidden');
+    $('.register-buttons').addClass('hidden');
+  },
+  'click .annuleren' : function(e){
+    e.preventDefault();
+    $('#register-form, #login-form').addClass('hidden');
+    $('.register-buttons').removeClass('hidden');
+  }
 
   /*
   'click .fb-login' : function(e, t) {
@@ -67,7 +83,7 @@ Template.register.events({
 
     Accounts.createUser({email: email, password: password}, function(err){
         if (err){
-          alert('error biatch');
+          alert('error');
         }
         else{
           alert('hoi');
@@ -78,20 +94,3 @@ Template.register.events({
   }
 
 });
-
-$(document).ready(function(){
-  if($('.login')){
-    $('.status-bar').hide();
-  }
-  else{
-    $('.status-bar').show();
-  }
-  showLogin();
-});
-
-function showLogin(){
-  $('.show-login').click(function(){
-    $('#login-form').removeClass('hidden');
-    $('.register-buttons').addClass('hidden');
-  });
-}

@@ -2,7 +2,9 @@ if (Meteor.isClient) {
   Meteor.Router.add({
     '/': 'home_screen',
     '/home': 'home_screen',
-    '/admin': 'admin_screen'
+    '/admin': 'admin_screen',
+    '/products': 'products_screen',
+    '/product': 'product_screen'
   });
 
   Meteor.Router.filters({
@@ -15,12 +17,15 @@ if (Meteor.isClient) {
     }
   });
 
-  Meteor.Router.filter('requireLogin');
-
-  Meteor.startup( function() {
-	filepicker.setKey("Auj9wAFhRKW7YkHRdY1Zwz");
-	filepicker.constructWidget(document.getElementById('attachment'));
+  $(document).ready(function(){
+    if($('.login')){
+      $('.status-bar').hide();
+    }
+    else{
+      $('.status-bar').show();
+    }
   });
 
-  /* test */
+  Meteor.Router.filter('requireLogin');
+  Meteor.subscribe('userData');
 }

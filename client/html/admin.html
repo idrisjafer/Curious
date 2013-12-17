@@ -3,10 +3,19 @@
 		<hr />
 		<h2>Voeg een product toe</h2>
 		<form id="add-product" action="action">
-			<input type="text" name="title" placeholder="Titel" />
-			<textarea>Beschrijving</textarea>
-			<input type="filepicker" id="attachment">
-			<input type="submit" value="Toevoegen">
+			<input  class="product-title" type="text" name="title" placeholder="Titel" />
+			<textarea class="product-short-description">Korte beschrijving</textarea>
+			<textarea class="product-description">Volledige Beschrijving</textarea>
+			<input class="product-production-time" type="text" name="productietijd" placeholder="productietijd" />
+			<input class="product-material" type="materiaal" name="materiaal" placeholder="materiaal" />
+			<input class="product-length" type="number" name="lengte" placeholder="lengte in cm" />
+			<input class="product-width" type="number" name="breedte" placeholder="breedte in cm" />
+			<input class="product-height" type="number" name="hoogte" placeholder="hoogte in cm" />
+			<input class="product-made-on" type="date" name="gemaaktop" />
+			<input class="product-picture1" type="url" name="foto1" placeholder="URL foto 1" />
+			<input class="product-picture2" type="url" name="foto2" placeholder="URL foto 2" />
+			<input class="product-picture3" type="url" name="foto3" placeholder="URL foto 3" />
+			<input class="submit-product" type="submit" value="Toevoegen">
 		</form>
 		<hr />
 	</div>
@@ -14,6 +23,7 @@
 
 <template name="register_maker">
 	<div class="register-maker">
+		<hr />
 		<h2>Maak een maker</h2>
 		<form id="register-maker" action="action">
 			<input type="email" id="maker-email">

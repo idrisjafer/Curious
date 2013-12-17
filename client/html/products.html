@@ -1,0 +1,12 @@
+<template name="products">
+	<div class="overview">
+		{{#each products}}
+		<a href="{{product_screenPath}}">
+			<div class="product">
+				<h3>{{title}}</h3>
+				<p>{{description}}</p>
+			</div>
+		</a>
+		{{/each}}
+	</div>
+</template>
