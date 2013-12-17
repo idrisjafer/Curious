@@ -18,24 +18,24 @@ Template.login.events({
 
     return false;
   },
-  'click .show-login' : function(e){
+  'tap .show-login' : function(e){
     e.preventDefault();
     $('#login-form').removeClass('hidden');
     $('.register-buttons').addClass('hidden');
   },
-  'click .email-login' : function(e){
+  'tap .email-login' : function(e){
     e.preventDefault();
     $('#register-form').removeClass('hidden');
     $('.register-buttons').addClass('hidden');
   },
-  'click .annuleren' : function(e){
+  'tap .annuleren' : function(e){
     e.preventDefault();
     $('#register-form, #login-form').addClass('hidden');
     $('.register-buttons').removeClass('hidden');
   }
 
   /*
-  'click .fb-login' : function(e, t) {
+  'tap .fb-login' : function(e, t) {
       e.preventDefault();
       Meteor.loginWithFacebook(function(err){
         if (err){
@@ -61,7 +61,7 @@ Template.login.login_error = function () {
 
 Template.logged_in.events({
 
-  'click #logout' : function(e, t) {
+  'tap #logout' : function(e, t) {
     e.preventDefault();
     Meteor.logout();
     return false;
