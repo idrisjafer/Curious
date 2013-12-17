@@ -155,12 +155,15 @@ body{
 	line-height: 38px;
 	font-size: 22px;
 	background: #fff;
-	border-radius: 2px;
 	color: #58446B;
 	display: block;
 	width: 163px;
 	float: right;
 	margin: 0 0 0 22px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
 }
 
 #login-form .annuleren,
