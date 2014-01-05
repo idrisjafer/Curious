@@ -1,17 +1,22 @@
 <head>
   <title>Curious</title>
-  <!--
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-  -->
 </head>
 
 <body>
-	<div class="status-bar">
-		<a href="{{home_screenPath}}">Home</a>
-	</div>
-	<div class="wrapper clearfix">{{renderPage}}</div>
+	{{> status_bar}}
 </body>
+
+<template name="status_bar">
+	<div class="status-bar">
+		<a href="{{pathFor 'home'}}">Home</a>
+	</div>
+</template>
+
+<template name="wrapper">
+	<div class="wrapper clearfix">{{yield}}</div>
+</template>
 
 <template name="login_screen">
 	<div class="login">
@@ -43,7 +48,7 @@
 </template>
 
 <template name="product_screen">
-	<div class="product">
+	<div class="product-detail">
 		{{> product_coverphoto}}
 		{{> product_photo}}
 		{{> product_meta}}

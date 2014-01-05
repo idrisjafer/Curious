@@ -42,7 +42,18 @@ Template.product_meta.helpers({
 	}
 });
 
+Template.product_coverphoto.events({
+	'tap img' : function(){
+		$('.coverphoto .info div').toggleClass('hidden');
+		$('.coverphoto h3').toggleClass('small');
+	}
+});
+
 Template.product_coverphoto.helpers({
+	title: function(){
+		currentProduct = Session.get('current_product');
+		return Products.findOne({_id: currentProduct}, {}).title;
+	},
 	picture1: function(){
 		currentProduct = Session.get('current_product');
 		return Products.findOne({_id: currentProduct}, {}).picture1;

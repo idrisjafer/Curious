@@ -1,31 +1,58 @@
 if (Meteor.isClient) {
-  Meteor.Router.add({
-    '/': 'home_screen',
-    '/home': 'home_screen',
-    '/admin': 'admin_screen',
-    '/products': 'products_screen',
-    '/product': 'product_screen'
-  });
+  Meteor.subscribe('userData');
+}
 
-  Meteor.Router.filters({
-    requireLogin: function(page) {
-      if (Meteor.user()) {
-        return page;
-      } else {
-        return 'login_screen';
+Router.configure({
+  layoutTemplate: 'wrapper'
+});
+
+Router.map(function () {
+  this.route('home', {
+    path: '/',
+    template: 'home_screen',
+    before: function () {
+      if (!Meteor.user()) {
+        this.render('login_screen');
+        $('.status-bar').addClass('hidden');
+        this.stop();
+      }
+      else{
+        $('.status-bar').removeClass('hidden');
       }
     }
   });
 
-  $(document).ready(function(){
-    if($('.login')){
-      $('.status-bar').hide();
-    }
-    else{
-      $('.status-bar').show();
+  this.route('admin', {
+    path: '/admin',
+    template: 'admin_screen',
+    before: function () {
+      if (!Meteor.user()) {
+        this.render('login_screen');
+        this.stop();
+      }
     }
   });
 
-  Meteor.Router.filter('requireLogin');
-  Meteor.subscribe('userData');
-}
+  this.route('products', {
+    path: '/products',
+    template: 'products_screen',
+    before: function () {
+      if (!Meteor.user()) {
+        this.render('login_screen');
+        this.stop();
+      }
+    }
+  });
+
+  this.route('product', {
+    path: '/product',
+    template: 'product_screen',
+    before: function () {
+      if (!Meteor.user()) {
+        this.render('login_screen');
+        this.stop();
+      }
+    }
+  });
+
+});

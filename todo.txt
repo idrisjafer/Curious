@@ -29,3 +29,10 @@ PRODUCTPAGINA:
 REQUESTS VAN JORGE:
 	* Opzij scrollen bij productpagina's
 	* Naar boven vloeiende scroll, naar beneden scroll per foto
+
+ANIMATIES PRODUCTPAGE:
+	* Titel gaat omhoog + wordt groter
+	* Rest van de info komt omhoog
+
+MAILEN:
+	* info@wais.nu (dude van Joël)

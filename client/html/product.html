@@ -2,11 +2,13 @@
 	<div class="coverphoto">
 		<img src="{{picture1}}" />
 		<div class="info">
-			<h3 class="title">{{title}}</h3>
-			<p class="short-description">{{shortdescription}}</p>
-			<p class="made-on"><em>Gemaakt op:</em> {{madeon}}</p>
-			<p class="production-time"><em>Productietijd:</em> {{productiontime}}</p>
-			<p class="material"><em>Materiaal:</em> {{material}}</p>
+			<h3 class="title small">{{title}}</h3>
+			<div class="hidden">
+				<p class="made-on"><em>Gemaakt op:</em> {{madeon}}</p>
+				<p class="production-time"><em>Productietijd:</em> {{productiontime}}</p>
+				<p class="material"><em>Materiaal:</em> {{material}}</p>
+				<p class="short-description">{{shortdescription}}</p>
+			</div>
 		</div>
 	</div>
 </template>

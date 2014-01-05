@@ -1,6 +1,11 @@
 <template name="home_links">
 	<ul>
-		<li><a href="{{products_screenPath}}">Products</a></li>
-		<li><a href="{{admin_screenPath}}">Admin</a></li>
+		<li>
+			<a href="{{pathFor 'products'}}">
+				<span>Products</span>
+				<img src="mijnopdrachten.png" />
+			</a>
+		</li>
+		<li><a href="{{pathFor 'admin'}}">Admin</a></li>
 	</ul>
 </template>

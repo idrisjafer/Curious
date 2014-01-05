@@ -1,7 +1,7 @@
 <template name="products">
 	<div class="overview">
 		{{#each products}}
-		<a href="{{product_screenPath}}">
+		<a href="{{pathFor 'product'}}">
 			<div class="product">
 				<h3>{{title}}</h3>
 				<p>{{description}}</p>
