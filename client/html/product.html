@@ -1,3 +1,16 @@
+<template name="product_dots">
+	<ul class="dots">
+		<li class="coverphotodot"><a href="#"></a></li>
+		{{#if picture2}}
+		<li class="photo2dot"><a href="#"></a></li>
+		{{/if}}
+		{{#if picture3}}
+		<li class="photo3dot"><a href="#"></a></li>
+		{{/if}}
+		<li class="infodot"><a href="#"></a></li>
+	</ul>
+</template>
+
 <template name="product_coverphoto">
 	<div class="coverphoto">
 		<img src="{{picture1}}" />
@@ -27,14 +40,19 @@
 </template>
 
 <template name="product_meta">
-	<div class="meta">
-		<h3 class="title">{{title}}</h3>
-		<p class="short-description">{{shortdescription}}</p>
-		<p class="full-description">{{description}}</p>
-		<span class="maker-email">{{maker}}</span>
-		<p class="size"><em>Afmetingen:</em> {{length}} x {{width}} x {{height}}</p>
-		<p class="made-on"><em>Gemaakt op:</em> {{madeon}}</p>
-		<p class="production-time"><em>Productietijd:</em> {{productiontime}}</p>
-		<p class="material"><em>Materiaal:</em> {{material}}</p>
+	<div class="product-meta clearfix">
+		<div class="description">
+			<h3 class="title">{{title}}</h3>
+			<p class="full-description">{{description}}</p>
+		</div>
+		<div class="maker">
+			<img src="#" width="100" height="100" />
+			<h3><a href="{{pathFor 'maker'}}" class="maker-email">{{makerfullname}}</a></h3>
+			<h4>Wie is {{makerfullname}}?</h4>
+			<p>{{makershortdescription}}</p>
+			<div>
+				<a href="#" class="send-message">Stuur een bericht</a>
+			</div>
+		</div>
 	</div>
 </template>

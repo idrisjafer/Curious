@@ -1,7 +1,8 @@
 <head>
   <title>Curious</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <script src="http://mwbrooks.github.io/thumbs.js/download/thumbs.0.6.0.min.js"></script>
+  <script src="/jquery.fingers.js"></script>
 </head>
 
 <body>
@@ -10,12 +11,16 @@
 
 <template name="status_bar">
 	<div class="status-bar">
-		<a href="{{pathFor 'home'}}">Home</a>
+		<a href="{{pathFor 'home'}}" class="previous"></a>
+		<span>Curious</span>
+		<a href="{{pathFor 'admin'}}" class="profile-link"></a>
 	</div>
 </template>
 
 <template name="wrapper">
-	<div class="wrapper clearfix">{{yield}}</div>
+	<div class="wrapper clearfix">
+		{{yield}}
+	</div>
 </template>
 
 <template name="login_screen">
@@ -26,17 +31,18 @@
 
 <template name="home_screen">
 	<div class="home">
-		{{> logged_in}}
 		{{> home_links}}
 	</div>
 </template>
 
 <template name="admin_screen">
-	<div class="admin">
+	<div class="admin clearfix">
 		{{> logged_in}}
 		{{> register_maker}}
+		{{> register_hero}}
 		{{#if isMaker}}
 		{{> add_product}}
+		{{> edit_profile}}
 		{{/if}}
 	</div>
 </template>
@@ -49,8 +55,17 @@
 
 <template name="product_screen">
 	<div class="product-detail">
+		{{> product_dots}}
 		{{> product_coverphoto}}
 		{{> product_photo}}
 		{{> product_meta}}
+	</div>
+</template>
+
+<template name="maker_screen">
+	<div class="maker-detail">
+		{{> maker_info}}
+		{{> maker_rating}}
+		{{> maker_products}}
 	</div>
 </template>

@@ -1,3 +1,14 @@
+Template.product_dots.helpers({
+	picture2: function(){
+		currentProduct = Session.get('current_product');
+		return Products.findOne({_id: currentProduct}, {}).picture2;
+	},
+	picture3: function(){
+		currentProduct = Session.get('current_product');
+		return Products.findOne({_id: currentProduct}, {}).picture3;
+	}
+});
+
 Template.product_meta.helpers({
 	title: function(){
 		currentProduct = Session.get('current_product');
@@ -35,10 +46,22 @@ Template.product_meta.helpers({
 		currentProduct = Session.get('current_product');
 		return Products.findOne({_id: currentProduct}, {}).madeon;
 	},
-	maker: function(){
+	makerfullname: function(){
 		currentProduct = Session.get('current_product');
 		currentMakerId = Products.findOne({_id: currentProduct}, {}).maker;
-		return Meteor.users.findOne({_id: currentMakerId}).emails[0].address;
+		return Meteor.users.findOne({_id: currentMakerId}).fullname;
+	},
+	makershortdescription: function(){
+		currentProduct = Session.get('current_product');
+		currentMakerId = Products.findOne({_id: currentProduct}, {}).maker;
+		return Meteor.users.findOne({_id: currentMakerId}).shortdescription;
+	}
+});
+
+Template.product_meta.events({
+	'click .maker-email': function(){
+		currentMakerId = Products.findOne({_id: currentProduct}, {}).maker;
+		Session.set('current_maker', currentMakerId);
 	}
 });
 

@@ -1,3 +1,6 @@
+/* =============================================
+=================== RESETS =====================
+============================================= */
 *{
 	box-sizing: border-box;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -33,7 +36,7 @@ time, mark, audio, video {
 }
 
 .clearfix:after {
-    content: ".";
+    content: "";
     display: block;
     clear: both;
     visibility: hidden;
@@ -41,41 +44,26 @@ time, mark, audio, video {
     height: 0;
 }
 
+/* =============================================
+=================== GENERAL ====================
+============================================= */
 a{
 	color: #1672B5;
 	text-decoration: none;
 }
 
 html{
-	background-color: #fff;
+	background-color: #000;
 	height: 768px;
 }
 
 body{
 	width: 1024px;
-	height: 768px;
+	height: 100%;
 	margin: 0 auto;
-	font: 15px/22px 'Open Sans', Arial, sans-serif;
-	color: #203C50;
-	background-color: #fff;
-	overflow: hidden;
-}
-
-.status-bar{
-	height: 64px;
-	padding: 20px 0 0 0;
-	background-image: -o-linear-gradient(105deg, #203C50 0%, #58446B 100%);
-	background-image: -moz-linear-gradient(105deg, #203C50 0%, #58446B 100%);
-	background-image: -webkit-linear-gradient(105deg, #203C50 0%, #58446B 100%);
-	background-image: -ms-linear-gradient(105deg, #203C50 0%, #58446B 100%);
-	background-image: linear-gradient(15deg, #203C50 0%, #58446B 100%);
-	position: fixed;
-	width: 100%;
-	z-index: 99;
-}
-
-.status-bar.hidden{
-	display: none;
+	font: 200 15px/22px 'Open Sans', Arial, sans-serif;
+	color: #8A7C97;
+	background-color: #f0f0f0;
 }
 
 .wrapper{
@@ -83,11 +71,59 @@ body{
 	padding-top: 64px;
 }
 
+h3{
+	color: #58446B;
+	font-size: 26px;
+	font-weight: 600;
+	padding: 0 0 15px 0;
+}
+
+/* =============================================
+================= STATUS BAR ===================
+============================================= */
+.status-bar{
+	height: 66px;
+	padding: 30px 0 0 0;
+	background-color: #fff;
+	border-bottom: 2px solid #58446B;
+	position: fixed;
+	width: 1024px;
+	z-index: 99;
+	text-align: center;
+	font-size: 20px;
+}
+
+.status-bar.hidden{
+	display: none;
+}
+
 .status-bar.hidden + .wrapper{
 	padding-top: 0;
 }
 
-/* LOGIN */
+.status-bar .previous{
+	display: block;
+	width: 32px;
+	height: 22px;
+	background: url('/icon-previous.png');
+	float: left;
+	margin: 0 0 0 20px;
+}
+
+.status-bar .profile-link{
+	display: block;
+	width: 32px;
+	height: 24px;
+	background: url('/icon-profile.png');
+	background-repeat: no-repeat;
+	background-position: right center;
+	float: right;
+	margin: 0 20px 0 0;
+}
+
+/* =============================================
+================ LOGIN SCREEN ==================
+============================================= */
 .login{
 	background-image: -o-linear-gradient(143deg, #203C50 0%, #58436A 100%);
 	background-image: -moz-linear-gradient(143deg, #203C50 0%, #58436A 100%);
@@ -235,9 +271,12 @@ body{
 	opacity: 0;
 }
 
-/* ADMIN */
+/* =============================================
+================ ADMIN SCREEN ==================
+============================================= */
 .admin{
 	padding: 25px;
+	background: #f0f0f0;
 }
 
 .admin input,
@@ -250,30 +289,128 @@ body{
 	float: left;
 }
 
-/* HOME */
+.admin > div{
+	background-color: #fff;
+	border-radius: 4px;
+	width: 477px;
+	padding: 25px;
+	margin: 20px 0 0 0;
+	float: left;
+}
+
+.admin > div:nth-child(2n){
+	margin-right: 20px;
+}
+
+.admin > div:first-child{
+	width: 100%;
+}
+
+.admin > div:first-child a{
+	float: right;
+}
+
+.admin h2{
+	font-weight: 600;
+	font-size: 18px;
+	padding: 0 0 15px 0;
+}
+
+.admin input,
+.admin textarea{
+	border: none;
+	background-color: #f0f0f0;
+	border-radius: 0;
+	height: 30px;
+	width: 100%;
+	font-size: 13px;
+	margin-bottom: 10px;
+	padding: 0 15px;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.admin textarea{
+	height: 100px;
+	padding: 7px 15px;
+	margin-bottom: 5px;
+}
+
+.admin input[type="submit"]{
+	background-color: #8A7C97;
+	color: #fff;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 30px;
+}
+
+.admin > div p{
+	padding-bottom: 15px;
+	font-size: 12px;
+}
+
+.admin > div p strong{
+	font-weight: 600;
+}
+
+/* =============================================
+================= HOME SCREEN ==================
+============================================= */
 .home{
 	padding: 40px;
+}
+
+.home ul{
+	margin: 0 0 45px 0;
+	display: block;
 }
 
 .home li{
 	float: left;
 	width: 288px;
-	margin: 0 40px 0 0;
+	height: 200px;
+	margin: 0 0 0 40px;
 	list-style-type: none;
+	border-radius: 4px;
+	overflow: hidden;
+	position: relative;
+}
+
+.home li:first-child{
+	margin: 0;
+}
+
+.home li a,
+.home li a img{
+	width: 100%;
+	height: 100%;
+}
+
+.home li a div{
+	background-image: -o-linear-gradient(-90deg, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.00) 23%, rgba(0,0,0,0.75) 91%);
+	background-image: -moz-linear-gradient(-90deg, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.00) 23%, rgba(0,0,0,0.75) 91%);
+	background-image: -webkit-linear-gradient(-90deg, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.00) 23%, rgba(0,0,0,0.75) 91%);
+	background-image: -ms-linear-gradient(-90deg, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.00) 23%, rgba(0,0,0,0.75) 91%);
+	background-image: linear-gradient(-180deg, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.00) 23%, rgba(0,0,0,0.75) 91%);
+	width: 100%;
+	height: 90px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }
 
 .home li span{
 	display: block;
-	border: 1px solid #D4D3D4;
-	border-bottom: none;
-	padding: 0 10px;
-	line-height: 36px;
+	position: absolute;
 	font-weight: 600;
-	font-size: 16px;
-	color: #203C50;
+	font-size: 17px;
+	bottom: 10px;
+	left: 10px;
+	color: #fff;
 }
 
-/* PRODUCT PAGE */
+/* =============================================
+=============== PRODUCT DETAIL =================
+============================================= */
 .coverphoto{
 	width: 100%;
 	height: 704px;
@@ -349,4 +486,204 @@ body{
 .product-detail .photo img{
 	min-width: 100%;
 	min-height: 100%;
+}
+
+.product-detail .dots{
+	position: fixed;
+	display: block;
+	top: 325px;
+	left: 40px;
+	z-index: 99;
+	list-style-type: none;
+}
+
+.product-detail .dots li a{
+	display: block;
+	width: 14px;
+	height: 14px;
+	border-radius: 7px;
+	background-color: #DEDAE1;
+	border: 1px solid #58446B;
+	margin: 10px 0;
+}
+
+.product-meta .description{
+	width: 582px;
+	background: #fff;
+	float: left;
+	padding: 30px 70px 30px 100px;
+	min-height: 702px;
+}
+
+.product-meta .description h3{
+	font-size: 32px;
+}
+
+.product-meta .maker{
+	width: 442px;
+	min-height: 702px;
+	padding: 25px 40px;
+	float: left;
+	background-color: #F0F0F0;
+}
+
+.product-meta .maker img{
+	float: left;
+	margin: 0 20px 0 0;
+	border-radius: 4px;
+}
+
+.product-meta .maker h3 a{
+	font-size: 26px;
+	color: #58446B;
+}
+
+.product-meta .maker h4{
+	display: block;
+	font-size: 20px;
+	font-weight: 600;
+	color: #58446B;
+	float: none;
+	clear: both;
+	padding: 40px 0 10px 0;
+}
+
+.product-meta .maker > div{
+	text-align: center;
+}
+
+.product-meta .maker .send-message{
+	display: inline-block;
+	padding: 13px 27px;
+	color: #58446B;
+	font-size: 17px;
+	font-weight: 600;
+	border: 3px solid #58446B;
+	margin: 40px 0 0 0;
+}
+
+/* =============================================
+================ MAKER SCREEN ==================
+============================================= */
+.maker-info{
+	padding: 30px 0 0 0;
+	height: 310px;
+	position: relative;
+	overflow: hidden;
+}
+
+.maker-info .short{
+	width: 557px;
+	position: absolute;
+	margin-left: -278px;
+	left: 50%;
+	opacity: 1;
+	transition: all .7s ease-in-out;
+}
+
+.maker-info .short.hidden{
+	opacity: 0;
+	-webkit-transform: translate(-700px, 0);
+	transform: translate(-700px, 0);
+}
+
+.maker-info img{
+	float: left;
+	margin: 0 40px 0 0;
+	border-radius: 4px;
+}
+
+.maker-info .full.hidden{
+	opacity: 0;
+	-webkit-transform: translate(1000px, 0);
+	transform: translate(1000px, 0);
+}
+
+.maker-info .full{
+	opacity: 1;
+	transition: all .7s ease-in-out;
+	position: absolute;
+	width: 100%;
+	height: 220px;
+	padding: 0 40px;
+}
+
+.maker-info ul{
+	list-style-type: none;
+	text-align: center;
+	display: block;
+	padding: 230px 0;
+}
+
+.maker-info ul li{
+	display: inline-block;
+}
+
+.maker-info ul a{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	border-radius: 7px;
+	background-color: #DEDAE1;
+	border: 1px solid #58446B;
+	margin: 0 10px;
+}
+
+.maker-info ul a.current{
+	background-color: #58446B;
+}
+
+.maker-rating{
+	background: #887A95;
+	height: 67px;
+	text-align: center;
+	color: #F0F0F0;
+	padding: 0 0 0 200px;
+}
+
+.maker-rating span{
+	display: block;
+	text-align: left;
+	padding: 12px 42px;
+	border-right: 1px solid #655B70;
+	height: 100%;
+	float: left;
+}
+
+.maker-rating strong{
+	font-weight: 600;
+	font-size: 20px;
+	display: block;
+}
+
+.maker-rating a{
+	display: block;
+	float: left;
+	padding: 8px 27px;
+	color: #58446B;
+	font-size: 17px;
+	font-weight: 600;
+	border: 2px solid #58446B;
+	background-color: #fff;
+	margin: 13px 0 0 43px;
+}
+
+.maker-products{
+	padding: 40px 0 0 40px;
+}
+
+.maker-products a{
+	width: 288px;
+	height: 200px;
+	border-radius: 4px;
+	display: block;
+	margin: 0 40px 40px 0;
+	overflow: hidden;
+	float: left;
+}
+
+.maker-products img{
+	width: 288px;
+	min-width: 288px;
+	min-height: 200px;
 }

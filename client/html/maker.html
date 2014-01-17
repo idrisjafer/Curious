@@ -1,0 +1,34 @@
+<template name="maker_info">
+	<div class="maker-info">
+		<div class="short clearfix">
+			<img src="#" width="180" height="180" />
+			<h3>{{fullname}}</h3>
+			<p>{{shortdescription}}</p>
+		</div>
+		<div class="full hidden">
+			<p>{{fulldescription}}</p>
+		</div>
+		<ul class="dots">
+			<li><a href="#" class="short-link current"></a></li>
+			<li><a href="#" class="full-link"></a></li>
+		</ul>
+	</div>
+</template>
+
+<template name="maker_rating">
+	<div class="maker-rating">
+		<span class="rating"><strong>9,7</strong>Rapportcijfer</span>
+		<span class="amount"><strong>103</strong>Beoordelingen</span>
+		<a href="#" class="message">Stuur een bericht</a>
+	</div>
+</template>
+
+<template name="maker_products">
+	<div class="maker-products clearfix">
+		{{#each products}}
+		<a href="{{pathFor 'product'}}">
+			<img src="{{picture1}}" />
+		</a>
+		{{/each}}
+	</div>
+</template>

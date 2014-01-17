@@ -2,6 +2,10 @@ if (Meteor.isClient) {
   Meteor.subscribe('userData');
 }
 
+Deps.autorun(function() {
+    Meteor.subscribe('userData');
+});
+
 Router.configure({
   layoutTemplate: 'wrapper'
 });
@@ -47,6 +51,17 @@ Router.map(function () {
   this.route('product', {
     path: '/product',
     template: 'product_screen',
+    before: function () {
+      if (!Meteor.user()) {
+        this.render('login_screen');
+        this.stop();
+      }
+    }
+  });
+
+    this.route('maker', {
+    path: '/maker',
+    template: 'maker_screen',
     before: function () {
       if (!Meteor.user()) {
         this.render('login_screen');

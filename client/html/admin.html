@@ -1,34 +1,56 @@
 <template name="add_product">
 	<div class="add-product">
-		<hr />
 		<h2>Voeg een product toe</h2>
+		<p>Dit product wordt toegevoegd onder de maker waarop je nu bent ingelogd. Het product is later niet meer te wijzigen, dus als er iets niet goed is gegaan bij het toevoegen, geef het even door dan kan ik het in de database aanpassen. Je hoeft niet alle velden in te voeren, maar zorg dat er tenminste één foto is.</p>
+		<p><strong>Foto's altijd 1024x768</strong></p>
 		<form id="add-product" action="action">
 			<input  class="product-title" type="text" name="title" placeholder="Titel" />
-			<textarea class="product-short-description">Korte beschrijving</textarea>
-			<textarea class="product-description">Volledige Beschrijving</textarea>
-			<input class="product-production-time" type="text" name="productietijd" placeholder="productietijd" />
-			<input class="product-material" type="materiaal" name="materiaal" placeholder="materiaal" />
-			<input class="product-length" type="number" name="lengte" placeholder="lengte in cm" />
-			<input class="product-width" type="number" name="breedte" placeholder="breedte in cm" />
-			<input class="product-height" type="number" name="hoogte" placeholder="hoogte in cm" />
-			<input class="product-made-on" type="date" name="gemaaktop" />
+			<textarea class="product-description" placeholder="Beschrijving"></textarea>
 			<input class="product-picture1" type="url" name="foto1" placeholder="URL foto 1" />
 			<input class="product-picture2" type="url" name="foto2" placeholder="URL foto 2" />
 			<input class="product-picture3" type="url" name="foto3" placeholder="URL foto 3" />
+			<input class="product-picture4" type="url" name="foto4" placeholder="URL foto 4" />
+			<input class="product-picture5" type="url" name="foto5" placeholder="URL foto 5" />
+			<input class="product-picture6" type="url" name="foto6" placeholder="URL foto 6" />
 			<input class="submit-product" type="submit" value="Toevoegen">
 		</form>
-		<hr />
 	</div>
 </template>
 
 <template name="register_maker">
 	<div class="register-maker">
-		<hr />
-		<h2>Maak een maker</h2>
+		<h2>Voeg een maker toe aan Curious</h2>
+		<p>Je wordt na het aanmaken gelijk ingelogd als deze maker. Het wachtwoord is altijd 'awkward'. Let op dat je in het emailadres de juiste hoofdletters gebruikt, omdat dit bij het inloggen ook uitmaakt volgens mij.</p>
 		<form id="register-maker" action="action">
-			<input type="email" id="maker-email">
-			<input type="password" id="maker-password">
-			<input type="submit" id="create-maker" value="Maak een maker" />
+			<input type="email" id="maker-email" placeholder="Email (gebruik: NaamVanMaker@hoogwater.nl)" />
+			<input type="submit" id="create-maker" value="Toevoegen" />
+		</form>
+	</div>
+</template>
+
+<template name="register_hero">
+	<div class="register-hero">
+		<h2>Voeg een hero toe aan Curious</h2>
+		<p>Je wordt na het aanmaken gelijk ingelogd als deze hero. Het wachtwoord is altijd 'awkward'. Let op dat je in het emailadres de juiste hoofdletters gebruikt, omdat dit bij het inloggen ook uitmaakt volgens mij.</p>
+		<form id="register-hero" action="action">
+			<input type="email" id="hero-email" placeholder="Email (gebruik: NaamVanHero@hoogwater.nl)" />
+			<input type="submit" id="create-hero" value="Toevoegen" />
+		</form>
+	</div>
+</template>
+
+<template name="edit_profile">
+	<div class="edit-profile">
+		<h2>Profiel aanpassen</h2>
+		<p>Je past het profiel aan waaronder je nu bent ingelogd, je kunt dit zovaak doen als dat je wilt. Niet alles hoeft ingevuld te worden.</p>
+		<p><strong>Profielfoto kan later worden gedaan, omdat daar nog geen definitief formaat voor is gekozen.</strong></p>
+		<form id="edit-profile" action="action">
+			<input type="text" id="profile-full-name" placeholder="Volledige naam" />
+			<input class="profile-picture" type="url" name="foto6" placeholder="URL Profielfoto" />
+			<input type="number" id="profile-rating" placeholder="Rating" min="1" max="10" />
+			<input type="number" id="profile-rating-amount" placeholder="Aantal ratings" />
+			<textarea id="profile-full-description" placeholder="Beschrijving"></textarea>
+			<input type="submit" id="save-profile" value="Wijzigingen opslaan" />
 		</form>
 	</div>
 </template>
