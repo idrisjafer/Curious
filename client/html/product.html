@@ -1,58 +1,45 @@
-<template name="product_dots">
-	<ul class="dots">
-		<li class="coverphotodot"><a href="#"></a></li>
+<template name="product_photo">
+	<div class="product-photos">
+		{{#if picture1}}
+		<img src="{{picture1}}" />
+		{{/if}}
 		{{#if picture2}}
-		<li class="photo2dot"><a href="#"></a></li>
+		<img src="{{picture2}}" />
 		{{/if}}
 		{{#if picture3}}
-		<li class="photo3dot"><a href="#"></a></li>
-		{{/if}}
-		<li class="infodot"><a href="#"></a></li>
-	</ul>
-</template>
-
-<template name="product_coverphoto">
-	<div class="coverphoto">
-		<img src="{{picture1}}" />
-		<div class="info">
-			<h3 class="title small">{{title}}</h3>
-			<div class="hidden">
-				<p class="made-on"><em>Gemaakt op:</em> {{madeon}}</p>
-				<p class="production-time"><em>Productietijd:</em> {{productiontime}}</p>
-				<p class="material"><em>Materiaal:</em> {{material}}</p>
-				<p class="short-description">{{shortdescription}}</p>
-			</div>
-		</div>
-	</div>
-</template>
-
-<template name="product_photo">
-	{{#if picture2}}
-	<div class="photo">
-		<img src="{{picture2}}" />
-	</div>
-	{{/if}}
-	{{#if picture3}}
-	<div class="photo">
 		<img src="{{picture3}}" />
+		{{/if}}
+		{{#if picture4}}
+		<img src="{{picture4}}" />
+		{{/if}}
+		{{#if picture5}}
+		<img src="{{picture5}}" />
+		{{/if}}
+		{{#if picture6}}
+		<img src="{{picture6}}" />
+		{{/if}}
 	</div>
-	{{/if}}
 </template>
 
-<template name="product_meta">
-	<div class="product-meta clearfix">
-		<div class="description">
-			<h3 class="title">{{title}}</h3>
-			<p class="full-description">{{description}}</p>
-		</div>
+<template name="product_info">
+	<div class="product-info">
+		<h3>{{title}}</h3>
+		<p>{{description}}</p>
+	</div>
+</template>
+
+<template name="product_sidebar">
+	<div class="product-sidebar">
+		{{#if favorited}}
+		<div class="favorited"><img src="icon-favoriteadded.png" /></div>
+		{{else}}
+		<div class="favorite"><img src="icon-favorite.png" /></div>
+		{{/if}}
 		<div class="maker">
-			<img src="#" width="100" height="100" />
-			<h3><a href="{{pathFor 'maker'}}" class="maker-email">{{makerfullname}}</a></h3>
-			<h4>Wie is {{makerfullname}}?</h4>
-			<p>{{makershortdescription}}</p>
-			<div>
-				<a href="#" class="send-message">Stuur een bericht</a>
-			</div>
+			<div class="image"><img src="{{profilepicture}}" /></div>
+			<h4>{{fullname}}</h4>
+			<p>{{description}}</p>
+			<a href="{{pathFor 'maker'}}">Bekijk meer werk</a>
 		</div>
 	</div>
 </template>

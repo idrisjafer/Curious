@@ -1,34 +1,50 @@
-<template name="maker_info">
-	<div class="maker-info">
-		<div class="short clearfix">
-			<img src="#" width="180" height="180" />
-			<h3>{{fullname}}</h3>
-			<p>{{shortdescription}}</p>
+<template name="maker_sidebar">
+	<div class="maker-sidebar">
+		<div class="image"><img src="{{profilepicture}}" /></div>
+		<h4>{{fullname}}</h4>
+		<p>{{description}}</p>
+		<span class="maker-contact-link">Neem contact op</span>
+		<div class="maker-rating">
+			<span><em>{{rating}}</em>Rapportcijfer</span>
+			<span><em>{{ratingamount}}</em>Beoordelingen</span>
 		</div>
-		<div class="full hidden">
-			<p>{{fulldescription}}</p>
-		</div>
-		<ul class="dots">
-			<li><a href="#" class="short-link current"></a></li>
-			<li><a href="#" class="full-link"></a></li>
-		</ul>
 	</div>
 </template>
 
-<template name="maker_rating">
-	<div class="maker-rating">
-		<span class="rating"><strong>9,7</strong>Rapportcijfer</span>
-		<span class="amount"><strong>103</strong>Beoordelingen</span>
-		<a href="#" class="message">Stuur een bericht</a>
+<template name="maker_content">
+	<div class="maker-content">
+		{{#if availabilityIsLow}}
+		<span class="availability low">Beschikbaar</span>
+		{{/if}}
+		{{#if availabilityIsMedium}}
+		<span class="availability medium">Beperkt beschikbaar</span>
+		{{/if}}
+		{{#if availabilityIsHigh}}
+		<span class="availability high">Niet beschikbaar</span>
+		{{/if}}
+		<div class="maker-products">
+			{{#each products}}
+			<a href="{{pathFor 'product'}}">
+				<img src="{{picture1}}" />
+			</a>
+			{{/each}}
+		</div>
 	</div>
 </template>
 
-<template name="maker_products">
-	<div class="maker-products clearfix">
-		{{#each products}}
-		<a href="{{pathFor 'product'}}">
-			<img src="{{picture1}}" />
-		</a>
-		{{/each}}
+<template name="maker_contact">
+	<div class="maker-contact hidden">
+		<form id="maker-contact-form" action="action">
+			<div>
+				<span><em>Bericht naar</em> {{fullname}}</span>
+			</div>
+			<div>
+				<span><em>Onderwerp</em></span>
+				<input type="text" id="maker-contact-subject" />
+			</div>
+			<textarea placeholder="Bericht"></textarea>
+			<input type="submit" value="Versturen" />
+			<span class="cancel">Annuleren</span>
+		</form>
 	</div>
 </template>

@@ -42,14 +42,27 @@
 <template name="edit_profile">
 	<div class="edit-profile">
 		<h2>Profiel aanpassen</h2>
-		<p>Je past het profiel aan waaronder je nu bent ingelogd, je kunt dit zovaak doen als dat je wilt. Niet alles hoeft ingevuld te worden.</p>
+		<p>Je past het profiel aan waaronder je nu bent ingelogd, je kunt dit zovaak doen als dat je wilt.</p>
 		<p><strong>Profielfoto kan later worden gedaan, omdat daar nog geen definitief formaat voor is gekozen.</strong></p>
 		<form id="edit-profile" action="action">
-			<input type="text" id="profile-full-name" placeholder="Volledige naam" />
-			<input class="profile-picture" type="url" name="foto6" placeholder="URL Profielfoto" />
-			<input type="number" id="profile-rating" placeholder="Rating" min="1" max="10" />
-			<input type="number" id="profile-rating-amount" placeholder="Aantal ratings" />
-			<textarea id="profile-full-description" placeholder="Beschrijving"></textarea>
+			<input type="text" id="profile-full-name" placeholder="Volledige naam" value="{{fullname}}" />
+			<input class="profile-picture" type="url" name="foto6" placeholder="URL Profielfoto" value="{{profilepicture}}" />
+			<input type="number" id="profile-rating" placeholder="Rating" min="1" max="10" value="{{rating}}" />
+			<input type="number" id="profile-rating-amount" placeholder="Aantal ratings" value="{{ratingamount}}" />
+			<textarea id="profile-full-description" placeholder="Beschrijving">{{fulldescription}}</textarea>
+			<input type="text" id="profile-address" placeholder="Adres" value="{{address}}" />
+			<input type="text" id="profile-postal-code" placeholder="Postcode" value="{{postalcode}}" />
+			<input type="text" id="profile-city" placeholder="Woonplaats" value="{{city}}" />
+			<select id="profile-role">
+				<option value="normal" {{#if roleIsNormal}}selected{{/if}}>Normale gebruiker</option>
+				<option value="hero" {{#if roleIsHero}}selected{{/if}}>Hero</option>
+				<option value="maker" {{#if roleIsMaker}}selected{{/if}}>Maker</option>
+			</select>
+			<select id="profile-availability">
+				<option value="low" {{#if availabilityIsLow}}selected{{/if}}>Beschikbaar</option>
+				<option value="medium" {{#if availabilityIsMedium}}selected{{/if}}>Beperkt beschikbaar</option>
+				<option value="high" {{#if availabilityIsHigh}}selected{{/if}}>Niet beschikbaar</option>
+			</select>
 			<input type="submit" id="save-profile" value="Wijzigingen opslaan" />
 		</form>
 	</div>

@@ -2,6 +2,7 @@
   <title>Curious</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <script src="http://mwbrooks.github.io/thumbs.js/download/thumbs.0.6.0.min.js"></script>
+  <script src="/fastclick.js"></script>
   <script src="/jquery.fingers.js"></script>
 </head>
 
@@ -11,10 +12,18 @@
 
 <template name="status_bar">
 	<div class="status-bar">
-		<a href="{{pathFor 'home'}}" class="previous"></a>
+		<a href="javascript:history.back();" class="previous"></a>
 		<span>Curious</span>
-		<a href="{{pathFor 'admin'}}" class="profile-link"></a>
+		<a href="{{pathFor 'profile'}}" class="profile-link"></a>
 	</div>
+	<nav class="hidden">
+		<ul>
+			<li><a href="{{pathFor 'home'}}">Dashboard</a></li>
+			<li><a href="#">Inbox</a></li>
+			<li><a href="{{pathFor 'favorites'}}">Mijn Favorieten</a></li>
+			<li><a href="{{pathFor 'admin'}}">Admin</a></li>
+		</ul>
+	</nav>
 </template>
 
 <template name="wrapper">
@@ -31,7 +40,9 @@
 
 <template name="home_screen">
 	<div class="home">
-		{{> home_links}}
+		{{> home_heroes}}
+		{{> home_mycurious}}
+		{{> home_inspiration}}
 	</div>
 </template>
 
@@ -42,8 +53,8 @@
 		{{> register_hero}}
 		{{#if isMaker}}
 		{{> add_product}}
-		{{> edit_profile}}
 		{{/if}}
+		{{> edit_profile}}
 	</div>
 </template>
 
@@ -54,18 +65,30 @@
 </template>
 
 <template name="product_screen">
-	<div class="product-detail">
-		{{> product_dots}}
-		{{> product_coverphoto}}
+	<div class="product-detail clearfix">
 		{{> product_photo}}
-		{{> product_meta}}
+		{{> product_info}}
+		{{> product_sidebar}}
 	</div>
 </template>
 
 <template name="maker_screen">
-	<div class="maker-detail">
-		{{> maker_info}}
-		{{> maker_rating}}
-		{{> maker_products}}
+	<div class="maker">
+		{{> maker_sidebar}}
+		{{> maker_content}}
+		{{> maker_contact}}
+	</div>
+</template>
+
+<template name="profile_screen">
+	<div class="profile">
+		{{> profile_sidebar}}
+		{{> profile_content}}
+	</div>
+</template>
+
+<template name="favorites_screen">
+	<div class="my-favorites">
+		{{> my_favorites}}
 	</div>
 </template>

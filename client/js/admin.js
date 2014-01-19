@@ -12,6 +12,7 @@ Template.add_product.events({
       maker: Meteor.userId()
     });
 
+    alert('Je product is toegevoegd');
     e.preventDefault();
   }
 });
@@ -24,11 +25,57 @@ Template.edit_profile.events({
       profilepicture: $('#profile-picture').val(),
       rating: $('#profile-rating').val(),
       ratingamount: $('#profile-rating-amount').val(),
-      fulldescription: $('#profile-full-description').val()
+      fulldescription: $('#profile-full-description').val(),
+      role: $('#profile-role').val(),
+      address: $('#profile-address').val(),
+      postalcode: $('#profile-postal-code').val(),
+      city: $('#profile-city').val(),
+      availability: $('#profile-availability').val()
     }}});
 
     alert('Profiel is aangepast');
     e.preventDefault();
+  }
+});
+
+Template.edit_profile.helpers({
+  fullname: function(){ return Meteor.user().profile.fullname; },
+  profilepicture: function(){ return Meteor.user().profile.profilepicture; },
+  rating: function(){ return Meteor.user().profile.rating; },
+  ratingamount: function(){ return Meteor.user().profile.ratingamount; },
+  fulldescription: function(){ return Meteor.user().profile.fulldescription; },
+  address: function(){ return Meteor.user().profile.address; },
+  postalcode: function(){ return Meteor.user().profile.postalcode; },
+  city: function(){ return Meteor.user().profile.city; },
+  roleIsNormal: function(){
+    if(Meteor.user().profile.role === 'normal'){
+      return true
+    }
+  },
+  roleIsMaker: function(){
+    if(Meteor.user().profile.role === 'maker'){
+      return true
+    }
+  },
+  roleIsHero: function(){
+    if(Meteor.user().profile.role === 'hero'){
+      return true
+    }
+  },
+  availabilityIsLow: function(){
+    if(Meteor.user().profile.availability === 'low'){
+      return true;
+    }
+  },
+  availabilityIsMedium: function(){
+    if(Meteor.user().profile.availability === 'medium'){
+      return true;
+    }
+  },
+  availabilityIsHigh: function(){
+    if(Meteor.user().profile.availability === 'high'){
+      return true;
+    }
   }
 });
 
@@ -39,7 +86,7 @@ Template.register_maker.events({
     var email = t.find('#maker-email').value;
     var password = "awkward";
 
-    Accounts.createUser({email: email, password: password}, function(err){
+    Accounts.createUser({email: email, password: password, profile: {role: 'maker'}}, function(err){
         if (err){
           alert(err);
         }

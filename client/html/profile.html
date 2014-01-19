@@ -1,0 +1,30 @@
+<template name="profile_sidebar">
+	<div class="profile-sidebar">
+		<div class="image"><img src="{{profilepicture}}" /></div>
+		<h4>{{fullname}}</h4>
+
+		<h5 class="personal-data">Persoonlijke gegevens <a href="{{pathFor 'admin'}}"></a></h5>
+		<span>{{fullname}}</span>
+		<span>{{address}}</span>
+		<span>{{postalcode}}, {{city}}</span>
+
+		<h5 class="login-data">Inloggegevens <a href="{{pathFor 'admin'}}"></a></h5>
+		<span>E-mailadres: {{email}}</span>
+		<span>Wachtwoord: *******</span>
+	</div>
+</template>
+
+<template name="profile_content">
+	<div class="profile-content">
+		{{> profile_favorites}}
+	</div>
+</template>
+
+<template name="profile_favorites">
+	<div class="profile-favorites">
+	<h3><a href="{{pathFor 'favorites'}}">Mijn favorieten</a></h3>
+	{{#each favorites}}
+	<a href="{{pathFor 'product'}}"><img src="{{productimage}}" /></a>
+	{{/each}}
+	</div>
+</template>

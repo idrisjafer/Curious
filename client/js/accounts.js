@@ -81,7 +81,7 @@ Template.register.events({
     var email = t.find('#account-email').value;
     var password = t.find('#account-password').value;
 
-    Accounts.createUser({email: email, password: password}, function(err){
+    Accounts.createUser({email: email, password: password, profile: {fullname: ''}}, function(err){
         if (err){
           alert('error');
         }

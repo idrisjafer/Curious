@@ -1,55 +1,79 @@
-<template name="home_links">
-	<h3>Mijn Curious</h3>
-	<ul class="clearfix">
-		<li>
-			<a href="{{pathFor 'products'}}">
-				<img src="mijnopdrachten.png" />
-				<div></div>
-				<span>Mijn opdrachten</span>
-			</a>
-		</li>
+<template name="home_heroes">
+	<div class="home-heroes">
+		<h3>Heroes</h3>
+		<ul>
+			{{#each heroes}}
+			<li>
+				<div class="image"><img src="#" /></div>
+				<div class="info">
+					<h4>{{profile.fullname}}</h4>
+					<p>{{profile.fulldescription}}</p>
+					<a href="#">Bekijk Hero</a>
+				</div>
+			</li>
+			{{/each}}
+		</ul>
+	</div>
+</template>
 
-		<li>
-			<a href="{{pathFor 'products'}}">
-				<img src="mijnopdrachten.png" />
-				<div></div>
-				<span>Mijn likes</span>
-			</a>
-		</li>
+<template name="home_mycurious">
+	<div class="home-mycurious">
+		<h3>Mijn Curious</h3>
+		<ul class="clearfix">
+			<li>
+				<a href="{{pathFor 'products'}}">
+					<img src="mijnopdrachten.png" />
+					<div></div>
+					<span>Mijn opdrachten</span>
+				</a>
+			</li>
 
-		<li>
-			<a href="{{pathFor 'products'}}">
-				<img src="mijnopdrachten.png" />
-				<div></div>
-				<span>Nieuwste blogspot</span>
-			</a>
-		</li>
-	</ul>
+			<li>
+				<a href="{{pathFor 'favorites'}}">
+					<img src="mijnopdrachten.png" />
+					<div></div>
+					<span>Mijn favorieten</span>
+				</a>
+			</li>
 
-	<h3>Inspiratie</h3>
-	<ul class="clearfix">
-		<li>
-			<a href="{{pathFor 'products'}}">
-				<img src="mijnopdrachten.png" />
-				<div></div>
-				<span>Nieuwe items</span>
-			</a>
-		</li>
+			<li>
+				<a href="{{pathFor 'products'}}">
+					<img src="mijnopdrachten.png" />
+					<div></div>
+					<span>Nieuwste blogspot</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</template>
 
-		<li>
-			<a href="{{pathFor 'products'}}">
-				<img src="mijnopdrachten.png" />
-				<div></div>
-				<span>Hero Picks</span>
-			</a>
-		</li>
+<template name="home_inspiration">
+	<div class="home-inspiration">
+		<h3>Inspiratie</h3>
+		<ul class="clearfix">
+			<li>
+				<a href="{{pathFor 'products'}}">
+					<img src="mijnopdrachten.png" />
+					<div></div>
+					<span>Nieuwe items</span>
+				</a>
+			</li>
 
-		<li>
-			<a href="{{pathFor 'products'}}">
-				<img src="mijnopdrachten.png" />
-				<div></div>
-				<span>Categorieën</span>
-			</a>
-		</li>
-	</ul>
+			<li>
+				<a href="{{pathFor 'products'}}">
+					<img src="mijnopdrachten.png" />
+					<div></div>
+					<span>Hero Picks</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="{{pathFor 'products'}}">
+					<img src="mijnopdrachten.png" />
+					<div></div>
+					<span>Categorieën</span>
+				</a>
+			</li>
+		</ul>
+	</div>
 </template>
