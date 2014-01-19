@@ -67,3 +67,14 @@
 		</form>
 	</div>
 </template>
+
+<template name="queueControl">
+    <h3>Select file(s) to upload:</h3>
+    <input name="files" type="file" class="fileUploader" multiple>
+</template>
+
+<template name="fileTable">
+    {{#each files}}
+        <img src="{{cfsFileUrl "fileHandler"}}" alt="{{_id}}">
+{{/each}}
+</template>

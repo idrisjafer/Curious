@@ -3,6 +3,8 @@ if (Meteor.isClient) {
   $(function() {
       FastClick.attach(document.body);
   });
+
+  Meteor.subscribe('myContactsFiles');
 }
 
 Deps.autorun(function() {

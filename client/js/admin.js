@@ -120,6 +120,19 @@ Template.register_hero.events({
   }
 });
 
+Template.queueControl.events({
+    'change .fileUploader': function (e) {
+        var files = e.target.files;
+        var k = ProductsFS.storeFiles(files);
+        console.log(k);
+    }
+});
+
+Template.fileTable.files = function() {
+    //show all files that have been published to the client, with most recently uploaded first
+    return ProductsFS.find({}, { sort: { uploadDate:-1 } });
+};
+
 Template.admin_screen.isMaker = function(){
   if(Meteor.user()){
     if(Makers.findOne({makerId: Meteor.userId()})){
