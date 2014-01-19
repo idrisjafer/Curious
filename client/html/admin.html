@@ -6,12 +6,18 @@
 		<form id="add-product" action="action">
 			<input  class="product-title" type="text" name="title" placeholder="Titel" />
 			<textarea class="product-description" placeholder="Beschrijving"></textarea>
-			<input class="product-picture1" type="url" name="foto1" placeholder="URL foto 1" />
-			<input class="product-picture2" type="url" name="foto2" placeholder="URL foto 2" />
-			<input class="product-picture3" type="url" name="foto3" placeholder="URL foto 3" />
-			<input class="product-picture4" type="url" name="foto4" placeholder="URL foto 4" />
-			<input class="product-picture5" type="url" name="foto5" placeholder="URL foto 5" />
-			<input class="product-picture6" type="url" name="foto6" placeholder="URL foto 6" />
+			<input name="files" type="file" class="product-upload1">
+			<input class="product-picture1" type="url" name="foto1" placeholder="ID foto 1" />
+			<input name="files" type="file" class="product-upload2">
+			<input class="product-picture2" type="url" name="foto2" placeholder="ID foto 2" />
+			<input name="files" type="file" class="product-upload3">
+			<input class="product-picture3" type="url" name="foto3" placeholder="ID foto 3" />
+			<input name="files" type="file" class="product-upload4">
+			<input class="product-picture4" type="url" name="foto4" placeholder="ID foto 4" />
+			<input name="files" type="file" class="product-upload5">
+			<input class="product-picture5" type="url" name="foto5" placeholder="ID foto 5" />
+			<input name="files" type="file" class="product-upload6">
+			<input class="product-picture6" type="url" name="foto6" placeholder="ID foto 6" />
 			<input class="submit-product" type="submit" value="Toevoegen">
 		</form>
 	</div>
@@ -66,15 +72,4 @@
 			<input type="submit" id="save-profile" value="Wijzigingen opslaan" />
 		</form>
 	</div>
-</template>
-
-<template name="queueControl">
-    <h3>Select file(s) to upload:</h3>
-    <input name="files" type="file" class="fileUploader" multiple>
-</template>
-
-<template name="fileTable">
-    {{#each files}}
-        <img src="{{cfsFileUrl "fileHandler"}}" alt="{{_id}}">
-{{/each}}
 </template>

@@ -14,6 +14,36 @@ Template.add_product.events({
 
     alert('Je product is toegevoegd');
     e.preventDefault();
+  },
+  'change .product-upload1': function (e) {
+    var files = e.target.files;
+    var newFileID = ProductsFS.storeFiles(files);
+    $('.product-picture1').val(newFileID);
+  },
+  'change .product-upload2': function (e) {
+    var files = e.target.files;
+    var newFileID = ProductsFS.storeFiles(files);
+    $('.product-picture2').val(newFileID);
+  },
+  'change .product-upload3': function (e) {
+    var files = e.target.files;
+    var newFileID = ProductsFS.storeFiles(files);
+    $('.product-picture3').val(newFileID);
+  },
+  'change .product-upload4': function (e) {
+    var files = e.target.files;
+    var newFileID = ProductsFS.storeFiles(files);
+    $('.product-picture4').val(newFileID);
+  },
+  'change .product-upload5': function (e) {
+    var files = e.target.files;
+    var newFileID = ProductsFS.storeFiles(files);
+    $('.product-picture5').val(newFileID);
+  },
+  'change .product-upload6': function (e) {
+    var files = e.target.files;
+    var newFileID = ProductsFS.storeFiles(files);
+    $('.product-picture6').val(newFileID);
   }
 });
 
@@ -118,14 +148,6 @@ Template.register_hero.events({
 
     return false;
   }
-});
-
-Template.queueControl.events({
-    'change .fileUploader': function (e) {
-        var files = e.target.files;
-        var k = ProductsFS.storeFiles(files);
-        console.log(k);
-    }
 });
 
 Template.fileTable.files = function() {

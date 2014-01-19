@@ -1,29 +1,83 @@
 Template.product_photo.helpers({
-	picture1: function(){
+	ifPic1: function(){
 		currentProduct = Session.get('current_product');
-		return Products.findOne({_id: currentProduct}, {}).picture1;
+		if(Products.findOne({_id: currentProduct}, {}).picture1){
+			return true;
+		}
 	},
-	picture2: function(){
+	ifPic2: function(){
 		currentProduct = Session.get('current_product');
-		return Products.findOne({_id: currentProduct}, {}).picture2;
+		if(Products.findOne({_id: currentProduct}, {}).picture2){
+			return true;
+		}
 	},
-	picture3: function(){
+	ifPic3: function(){
 		currentProduct = Session.get('current_product');
-		return Products.findOne({_id: currentProduct}, {}).picture3;
+		if(Products.findOne({_id: currentProduct}, {}).picture3){
+			return true;
+		}
 	},
-	picture4: function(){
+	ifPic4: function(){
 		currentProduct = Session.get('current_product');
-		return Products.findOne({_id: currentProduct}, {}).picture4;
+		if(Products.findOne({_id: currentProduct}, {}).picture4){
+			return true;
+		}
 	},
-	picture5: function(){
+	ifPic5: function(){
 		currentProduct = Session.get('current_product');
-		return Products.findOne({_id: currentProduct}, {}).picture5;
+		if(Products.findOne({_id: currentProduct}, {}).picture5){
+			return true;
+		}
 	},
-	picture6: function(){
+	ifPic6: function(){
 		currentProduct = Session.get('current_product');
-		return Products.findOne({_id: currentProduct}, {}).picture6;
+		if(Products.findOne({_id: currentProduct}, {}).picture6){
+			return true;
+		}
 	}
 });
+
+Template.product_photo.picture1 = function() {
+    //show all files that have been published to the client, with most recently uploaded first
+    currentProduct = Session.get('current_product');
+	var imgID = Products.findOne({_id: currentProduct}, {}).picture1;
+	return ProductsFS.find({_id: imgID}, {});
+};
+
+Template.product_photo.picture2 = function() {
+    //show all files that have been published to the client, with most recently uploaded first
+    currentProduct = Session.get('current_product');
+	var imgID = Products.findOne({_id: currentProduct}, {}).picture2;
+	return ProductsFS.find({_id: imgID}, {});
+};
+
+Template.product_photo.picture3 = function() {
+    //show all files that have been published to the client, with most recently uploaded first
+    currentProduct = Session.get('current_product');
+	var imgID = Products.findOne({_id: currentProduct}, {}).picture3;
+	return ProductsFS.find({_id: imgID}, {});
+};
+
+Template.product_photo.picture4 = function() {
+    //show all files that have been published to the client, with most recently uploaded first
+    currentProduct = Session.get('current_product');
+	var imgID = Products.findOne({_id: currentProduct}, {}).picture4;
+	return ProductsFS.find({_id: imgID}, {});
+};
+
+Template.product_photo.picture5 = function() {
+    //show all files that have been published to the client, with most recently uploaded first
+    currentProduct = Session.get('current_product');
+	var imgID = Products.findOne({_id: currentProduct}, {}).picture5;
+	return ProductsFS.find({_id: imgID}, {});
+};
+
+Template.product_photo.picture6 = function() {
+    //show all files that have been published to the client, with most recently uploaded first
+    currentProduct = Session.get('current_product');
+	var imgID = Products.findOne({_id: currentProduct}, {}).picture6;
+	return ProductsFS.find({_id: imgID}, {});
+};
 
 Template.product_info.helpers({
 	title: function(){
