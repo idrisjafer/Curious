@@ -17,6 +17,12 @@ Template.maker_sidebar.helpers({
 	}
 });
 
+Template.maker_sidebar.profilepicture = function() {
+	currentMaker = Session.get('current_maker');
+	var imgID = Meteor.users.findOne({_id: currentMaker}).profile.profilepicture;
+	return ProfilesFS.find({_id: imgID}, {});
+};
+
 Template.maker_sidebar.events({
 	'click .maker-contact-link': function(){
 		$('.maker .maker-contact').removeClass('hidden');
@@ -63,15 +69,8 @@ Template.maker_content.helpers({
 	}
 });
 
-/*Template.maker_products.helpers({
-	products: function() {
-		return Products.find();
-	}
-});
-
-Template.products.helpers({
-  products: function() {
-  	currentMaker = Session.get('current_maker');
-    return Products.find('maker', currentMaker);
-  }
-});*/
+Template.maker_content.picture1 = function() {
+    currentProduct = this._id;
+	var imgID = Products.findOne({_id: currentProduct}, {}).picture1;
+	return ProductsFS.find({_id: imgID}, {});
+};

@@ -1,6 +1,10 @@
 <template name="maker_sidebar">
 	<div class="maker-sidebar">
-		<div class="image"><img src="{{profilepicture}}" /></div>
+		<div class="image">
+			{{#each profilepicture}}
+        	<img src="{{cfsFileUrl "fileHandler"}}">
+			{{/each}}
+		</div>
 		<h4>{{fullname}}</h4>
 		<p>{{description}}</p>
 		<span class="maker-contact-link">Neem contact op</span>
@@ -25,7 +29,9 @@
 		<div class="maker-products">
 			{{#each products}}
 			<a href="{{pathFor 'product'}}">
-				<img src="{{picture1}}" />
+				{{#each picture1}}
+		        <img src="{{cfsFileUrl "fileHandler"}}">
+				{{/each}}
 			</a>
 			{{/each}}
 		</div>

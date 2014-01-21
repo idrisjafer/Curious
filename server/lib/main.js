@@ -9,6 +9,7 @@ if (Meteor.isServer) {
         }
     }
     ProductsFS.fileHandlers(handler);
+    ProfilesFS.fileHandlers(handler);
 
 	// Allow to update users' fields
 	Meteor.users.allow({

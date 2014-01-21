@@ -1,6 +1,10 @@
 <template name="profile_sidebar">
 	<div class="profile-sidebar">
-		<div class="image"><img src="{{profilepicture}}" /></div>
+		<div class="image">
+			{{#each profilepicture}}
+        	<img src="{{cfsFileUrl "fileHandler"}}">
+			{{/each}}
+		</div>
 		<h4>{{fullname}}</h4>
 
 		<h5 class="personal-data">Persoonlijke gegevens <a href="{{pathFor 'admin'}}"></a></h5>
@@ -24,7 +28,11 @@
 	<div class="profile-favorites">
 	<h3><a href="{{pathFor 'favorites'}}">Mijn favorieten</a></h3>
 	{{#each favorites}}
-	<a href="{{pathFor 'product'}}"><img src="{{productimage}}" /></a>
+	<a href="{{pathFor 'product'}}">
+		{{#each picture1}}
+        <img src="{{cfsFileUrl "fileHandler"}}">
+		{{/each}}
+	</a>
 	{{/each}}
 	</div>
 </template>

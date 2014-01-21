@@ -56,6 +56,8 @@ Template.edit_profile.events({
       rating: $('#profile-rating').val(),
       ratingamount: $('#profile-rating-amount').val(),
       fulldescription: $('#profile-full-description').val(),
+      whodescription: $('#profile-who-description').val(),
+      whydescription: $('#profile-why-description').val(),
       role: $('#profile-role').val(),
       address: $('#profile-address').val(),
       postalcode: $('#profile-postal-code').val(),
@@ -65,7 +67,12 @@ Template.edit_profile.events({
 
     alert('Profiel is aangepast');
     e.preventDefault();
-  }
+  },
+  'change .profile-upload': function (e) {
+    var files = e.target.files;
+    var newFileID = ProfilesFS.storeFiles(files);
+    $('#profile-picture').val(newFileID);
+  },
 });
 
 Template.edit_profile.helpers({
@@ -149,11 +156,6 @@ Template.register_hero.events({
     return false;
   }
 });
-
-Template.fileTable.files = function() {
-    //show all files that have been published to the client, with most recently uploaded first
-    return ProductsFS.find({}, { sort: { uploadDate:-1 } });
-};
 
 Template.admin_screen.isMaker = function(){
   if(Meteor.user()){

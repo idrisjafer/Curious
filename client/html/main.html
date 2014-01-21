@@ -55,14 +55,13 @@
 		{{> add_product}}
 		{{/if}}
 		{{> edit_profile}}
-		{{> queueControl}}
-		{{> fileTable}}
 	</div>
 </template>
 
 <template name="products_screen">
 	<div class="products">
-		{{> products}}
+		{{> products_filters}}
+		{{> products_overview}}
 	</div>
 </template>
 
@@ -92,5 +91,18 @@
 <template name="favorites_screen">
 	<div class="my-favorites">
 		{{> my_favorites}}
+	</div>
+</template>
+
+<template name="heroes_screen">
+	<div class="heroes">
+		{{> heroes_overview}}
+	</div>
+</template>
+
+<template name="hero_screen">
+	<div class="hero">
+		{{> hero_header}}
+		{{> hero_content}}
 	</div>
 </template>

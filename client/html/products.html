@@ -1,12 +1,18 @@
-<template name="products">
-	<div class="overview">
+<template name="products_overview">
+	<div class="products-overview">
 		{{#each products}}
 		<a href="{{pathFor 'product'}}">
-			<div class="product">
-				<h3>{{title}}</h3>
-				<p>{{description}}</p>
-			</div>
+			{{#each picture1}}
+	        <img src="{{cfsFileUrl "fileHandler"}}">
+			{{/each}}
 		</a>
 		{{/each}}
+	</div>
+</template>
+
+<template name="products_filters">
+	<div class="products-filters">
+		<input type="text" placeholder="Zoek een product" />
+		<span>Selecteer categorie</span>
 	</div>
 </template>

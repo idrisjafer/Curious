@@ -1,5 +1,9 @@
 <template name="my_favorites">
 	{{#each favorites}}
-	<a href="{{pathFor 'product'}}"><img src="{{productimage}}" /></a>
+	<a href="{{pathFor 'product'}}">
+		{{#each picture1}}
+        <img src="{{cfsFileUrl "fileHandler"}}">
+		{{/each}}
+	</a>
 	{{/each}}
 </template>

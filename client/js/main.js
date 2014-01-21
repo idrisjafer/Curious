@@ -38,13 +38,9 @@ Router.map(function () {
       else{
         $('.status-bar').removeClass('hidden');
       }
-      $('.wrapper').addClass('off');
     },
     after: function() {
       $('.status-bar span').html('Dashboard');
-      setTimeout(function(){
-        $('.wrapper').removeClass('off');
-      },500)
     }
   });
 
@@ -60,13 +56,9 @@ Router.map(function () {
       else{
         $('.status-bar').removeClass('hidden');
       }
-      $('.wrapper').addClass('off');
     },
     after: function() {
       $('.status-bar span').html('Administrator');
-      setTimeout(function(){
-        $('.wrapper').removeClass('off');
-      },500)
     }
   });
 
@@ -82,13 +74,9 @@ Router.map(function () {
       else{
         $('.status-bar').removeClass('hidden');
       }
-      $('.wrapper').addClass('off');
     },
     after: function() {
       $('.status-bar span').html('Inspiratie board');
-      setTimeout(function(){
-        $('.wrapper').removeClass('off');
-      },500)
     }
   });
 
@@ -104,13 +92,9 @@ Router.map(function () {
       else{
         $('.status-bar').removeClass('hidden');
       }
-      $('.wrapper').addClass('off');
     },
     after: function() {
       $('.status-bar span').html('Product');
-      setTimeout(function(){
-        $('.wrapper').removeClass('off');
-      },500)
     }
   });
 
@@ -126,15 +110,11 @@ Router.map(function () {
       else{
         $('.status-bar').removeClass('hidden');
       }
-      $('.wrapper').addClass('off');
     },
     after: function() {
       currentMaker = Session.get('current_maker');
       title = Meteor.users.findOne({_id: currentMaker}).profile.fullname;
       $('.status-bar span').html(title);
-      setTimeout(function(){
-        $('.wrapper').removeClass('off');
-      },500)
     }
   });
 
@@ -150,13 +130,9 @@ Router.map(function () {
       else{
         $('.status-bar').removeClass('hidden');
       }
-      $('.wrapper').addClass('off');
     },
     after: function() {
       $('.status-bar span').html('Mijn profiel');
-      setTimeout(function(){
-        $('.wrapper').removeClass('off');
-      },500)
     }
   });
 
@@ -172,13 +148,45 @@ Router.map(function () {
       else{
         $('.status-bar').removeClass('hidden');
       }
-      $('.wrapper').addClass('off');
     },
     after: function() {
       $('.status-bar span').html('Mijn favorieten');
-      setTimeout(function(){
-        $('.wrapper').removeClass('off');
-      },500)
+    }
+  });
+
+  this.route('heroes', {
+    path: '/heroes',
+    template: 'heroes_screen',
+    before: function(){
+      if (!Meteor.user()) {
+        this.render('login_screen');
+        $('.status-bar').addClass('hidden');
+        this.stop();
+      }
+      else{
+        $('.status-bar').removeClass('hidden');
+      }
+    },
+    after: function() {
+      $('.status-bar span').html('Heroes');
+    }
+  });
+
+  this.route('hero', {
+    path: '/hero',
+    template: 'hero_screen',
+    before: function(){
+      if (!Meteor.user()) {
+        this.render('login_screen');
+        $('.status-bar').addClass('hidden');
+        this.stop();
+      }
+      else{
+        $('.status-bar').removeClass('hidden');
+      }
+    },
+    after: function() {
+      $('.status-bar span').html('Hero');
     }
   });
 

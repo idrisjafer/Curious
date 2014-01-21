@@ -458,7 +458,9 @@ nav a{
 
 .home-heroes ul{
 	display: block;
-	width: 100%;
+	width: 1024px;
+	margin: 0 0 0 -27px;
+	padding: 0 0 0 27px;
 	height: 280px;
 	overflow: scroll;
 	white-space: nowrap;
@@ -471,7 +473,8 @@ nav a{
 	background-color: #F6F6F6;
 	float: none;
 	white-space: normal;
-	margin: 0 61px 0 0;
+	border-right: 40px solid #fff;
+	box-sizing: content-box;
 }
 
 .home-heroes .image{
@@ -521,6 +524,57 @@ nav a{
 }
 
 /* =============================================
+=============== PRODUCTS SCREEN ================
+============================================= */
+.products .products-filters{
+	width: 1024px;
+	height: 70px;
+	background-color: #F6F6F6;
+	padding: 12px 30px;
+}
+
+.products .products-filters input,
+.products .products-filters span{
+	width: 698px;
+	background-color: #fff;
+	border: none;
+	height: 46px;
+	font-size: 18px;
+	padding: 0 46px;
+	font-weight: 200;
+	color: #7A7A7A;
+	margin: 0 25px 0 0;
+}
+
+.products .products-filters span{
+	width: 240px;
+	padding: 0 29px;
+	line-height: 46px;
+	display: inline-block;
+	margin: 0;
+	float: right;
+}
+
+.products .products-overview{
+	padding: 30px 18px 0 18px;
+}
+
+.products .products-overview > a{
+	width: 470px;
+	height: 370px;
+	margin: 0 12px 30px 12px;
+	overflow: hidden;
+	display: block;
+	background-color: #F6F6F6;
+	float: left;
+}
+
+.products .products-overview > a img{
+	min-width: 100%;
+	height: 100%;
+}
+
+/* =============================================
 =============== PRODUCT DETAIL =================
 ============================================= */
 .product-detail{
@@ -528,28 +582,40 @@ nav a{
 }
 
 .product-detail .product-photos{
-	white-space: nowrap;
-	overflow: auto;
+	display: block;
 	width: 100%;
-	height: 570px;
-	position: relative;
+	height: 580px;
+	overflow: scroll;
 	white-space: nowrap;
 }
 
 .product-detail .product-photos img{
 	height: 570px;
+	margin: 0 0 0 3px;
+	list-style-type: none;
+	overflow: hidden;
+	position: relative;
+	display: inline-block;
+	background-color: #F6F6F6;
+	float: none;
+	white-space: normal;
+	box-sizing: content-box;
+}
+
+.product-detail .product-photos img:first-child{
+	margin: 0;
 }
 
 .product-detail .product-info{
 	width: 664px;
-	padding: 30px 59px 30px 30px;
+	padding: 20px 59px 30px 30px;
 	float: left;
 }
 
 .product-detail .product-sidebar{
 	float: left;
 	width: 330px;
-	padding: 33px 0 0 0;
+	padding: 23px 0 0 0;
 }
 
 .product-detail .product-sidebar .favorite,
@@ -579,11 +645,12 @@ nav a{
 	background: #D4D4D4;
 	float: left;
 	margin: 0 25px 0 0;
+	overflow: hidden;
 }
 
 .product-detail .product-sidebar .maker .image img{
-	min-height: 100%;
-	min-height: 100%;
+	min-width: 100%;
+	height: 100%;
 }
 
 .product-detail .product-sidebar .maker p{
@@ -629,6 +696,7 @@ nav a{
 	height: 200px;
 	background-color: #9B9B9B;
 	margin: 0 0 16px 0;
+	overflow: hidden;
 }
 
 .profile .profile-sidebar .image img{
@@ -726,6 +794,7 @@ nav a{
 	height: 200px;
 	background-color: #9B9B9B;
 	margin: 0 0 16px 0;
+	overflow: hidden;
 }
 
 .maker .maker-sidebar .image img{
@@ -886,4 +955,67 @@ nav a{
 	border: none;
 	margin: 0 15px;
 	float: right;
+}
+
+/* =============================================
+================ HEROES SCREEN =================
+============================================= */
+.heroes .heroes_hero{
+	width: 100%;
+	height: 420px;
+	background-color: #F6F6F6;
+	position: relative;
+	margin: 0 0 3px 0;
+	display: block;
+	color: #7A7A7A;
+}
+
+.heroes .heroes_hero > div{
+	top: 115px;
+	left: 523px;
+	position: absolute;
+	width: 387px;
+}
+
+.heroes .heroes_hero:nth-child(even) > div{
+	left: 113px;
+}
+
+.heroes .heroes_hero h4{
+	font-size: 30px;
+}
+
+/* =============================================
+================= HERO SCREEN ==================
+============================================= */
+.hero .hero-header{
+	width: 100%;
+	height: 420px;
+	background-color: #F6F6F6;
+	position: relative;
+}
+
+.hero .hero-header > div{
+	top: 115px;
+	left: 523px;
+	position: absolute;
+	width: 387px;
+}
+
+.hero .hero-header > div a{
+	color: #754775;
+	font-weight: 700;
+	font-size: 15px;
+	margin: 21px 0 0 0;
+	float: right;
+}
+
+.hero .hero-header > div a:after{
+	width: 8px;
+	height: 15px;
+	display: block;
+	content: '';
+	background-image: url('/icon-linkarrow.png');
+	float: right;
+	margin: 5px 0 0 10px;
 }

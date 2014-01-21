@@ -2,7 +2,6 @@
 	<div class="add-product">
 		<h2>Voeg een product toe</h2>
 		<p>Dit product wordt toegevoegd onder de maker waarop je nu bent ingelogd. Het product is later niet meer te wijzigen, dus als er iets niet goed is gegaan bij het toevoegen, geef het even door dan kan ik het in de database aanpassen. Je hoeft niet alle velden in te voeren, maar zorg dat er tenminste één foto is.</p>
-		<p><strong>Foto's altijd 1024x768</strong></p>
 		<form id="add-product" action="action">
 			<input  class="product-title" type="text" name="title" placeholder="Titel" />
 			<textarea class="product-description" placeholder="Beschrijving"></textarea>
@@ -52,10 +51,13 @@
 		<p><strong>Profielfoto kan later worden gedaan, omdat daar nog geen definitief formaat voor is gekozen.</strong></p>
 		<form id="edit-profile" action="action">
 			<input type="text" id="profile-full-name" placeholder="Volledige naam" value="{{fullname}}" />
-			<input class="profile-picture" type="url" name="foto6" placeholder="URL Profielfoto" value="{{profilepicture}}" />
+			<input name="files" type="file" class="profile-upload">
+			<input id="profile-picture" type="url" placeholder="URL Profielfoto" value="{{profilepicture}}" />
 			<input type="number" id="profile-rating" placeholder="Rating" min="1" max="10" value="{{rating}}" />
 			<input type="number" id="profile-rating-amount" placeholder="Aantal ratings" value="{{ratingamount}}" />
 			<textarea id="profile-full-description" placeholder="Beschrijving">{{fulldescription}}</textarea>
+			<textarea id="profile-who-description" placeholder="Wie">{{whodescription}}</textarea>
+			<textarea id="profile-why-description" placeholder="Waarom">{{whydescription}}</textarea>
 			<input type="text" id="profile-address" placeholder="Adres" value="{{address}}" />
 			<input type="text" id="profile-postal-code" placeholder="Postcode" value="{{postalcode}}" />
 			<input type="text" id="profile-city" placeholder="Woonplaats" value="{{city}}" />

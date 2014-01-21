@@ -1,10 +1,6 @@
 Template.my_favorites.helpers({
 	favorites: function(){
 		return Meteor.user().profile.favorites;
-	},
-	productimage: function(){
-		var imgID = JSON.stringify($(this)).slice(6,23);
-		return Products.findOne({_id: imgID}, {}).picture1;
 	}
 });
 
@@ -14,3 +10,9 @@ Template.my_favorites.events({
 		Session.set('current_product', productID);
 	}
 });
+
+Template.my_favorites.picture1 = function() {
+    currentProduct = JSON.stringify($(this)).slice(6,23);
+	var imgID = Products.findOne({_id: currentProduct}, {}).picture1;
+	return ProductsFS.find({_id: imgID}, {});
+};

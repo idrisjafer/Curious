@@ -48,7 +48,11 @@
 		<div class="favorite"><img src="icon-favorite.png" /></div>
 		{{/if}}
 		<div class="maker">
-			<div class="image"><img src="{{profilepicture}}" /></div>
+			<div class="image">
+				{{#each userpicture}}
+	        	<img src="{{cfsFileUrl "fileHandler"}}">
+				{{/each}}
+			</div>
 			<h4>{{fullname}}</h4>
 			<p>{{description}}</p>
 			<a href="{{pathFor 'maker'}}">Bekijk meer werk</a>

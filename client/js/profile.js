@@ -26,3 +26,14 @@ Template.profile_favorites.events({
 		Session.set('current_product', productID);
 	}
 });
+
+Template.profile_favorites.picture1 = function() {
+    currentProduct = JSON.stringify($(this)).slice(6,23);
+	var imgID = Products.findOne({_id: currentProduct}, {}).picture1;
+	return ProductsFS.find({_id: imgID}, {});
+};
+
+Template.profile_sidebar.profilepicture = function() {
+	var imgID = Meteor.user().profile.profilepicture;
+	return ProfilesFS.find({_id: imgID}, {});
+};

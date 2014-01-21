@@ -38,42 +38,36 @@ Template.product_photo.helpers({
 });
 
 Template.product_photo.picture1 = function() {
-    //show all files that have been published to the client, with most recently uploaded first
     currentProduct = Session.get('current_product');
 	var imgID = Products.findOne({_id: currentProduct}, {}).picture1;
 	return ProductsFS.find({_id: imgID}, {});
 };
 
 Template.product_photo.picture2 = function() {
-    //show all files that have been published to the client, with most recently uploaded first
     currentProduct = Session.get('current_product');
 	var imgID = Products.findOne({_id: currentProduct}, {}).picture2;
 	return ProductsFS.find({_id: imgID}, {});
 };
 
 Template.product_photo.picture3 = function() {
-    //show all files that have been published to the client, with most recently uploaded first
     currentProduct = Session.get('current_product');
 	var imgID = Products.findOne({_id: currentProduct}, {}).picture3;
 	return ProductsFS.find({_id: imgID}, {});
 };
 
 Template.product_photo.picture4 = function() {
-    //show all files that have been published to the client, with most recently uploaded first
     currentProduct = Session.get('current_product');
 	var imgID = Products.findOne({_id: currentProduct}, {}).picture4;
 	return ProductsFS.find({_id: imgID}, {});
 };
 
 Template.product_photo.picture5 = function() {
-    //show all files that have been published to the client, with most recently uploaded first
     currentProduct = Session.get('current_product');
 	var imgID = Products.findOne({_id: currentProduct}, {}).picture5;
 	return ProductsFS.find({_id: imgID}, {});
 };
 
 Template.product_photo.picture6 = function() {
-    //show all files that have been published to the client, with most recently uploaded first
     currentProduct = Session.get('current_product');
 	var imgID = Products.findOne({_id: currentProduct}, {}).picture6;
 	return ProductsFS.find({_id: imgID}, {});
@@ -129,3 +123,10 @@ Template.product_sidebar.events({
 		Session.set('current_maker', currentMakerId);
 	}
 });
+
+Template.product_sidebar.userpicture = function() {
+	currentProduct = Session.get('current_product');
+	currentMakerId = Products.findOne({_id: currentProduct}, {}).maker;
+	var imgID = Meteor.users.findOne({_id: currentMakerId}).profile.profilepicture;
+	return ProfilesFS.find({_id: imgID}, {});
+};
