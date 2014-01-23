@@ -1,9 +1,12 @@
 <template name="heroes_overview">
 	{{#each heroes}}
 	<a href="{{pathFor 'hero'}}" class="heroes_hero">
+		{{#each profilepicture}}
+		<img src="{{cfsFileUrl "fileHandler"}}">
+		{{/each}}
 		<div>
 			<h4>{{profile.fullname}}</h4>
-			<p>{{profile.fulldescription}}</p>
+			<p>{{{profile.fulldescription}}}</p>
 		</div>
 	</a>
 	{{/each}}

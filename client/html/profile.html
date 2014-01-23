@@ -20,12 +20,15 @@
 
 <template name="profile_content">
 	<div class="profile-content">
+		{{> profile_currentprojects}}
+		{{#if ifFavorites}}
 		{{> profile_favorites}}
+		{{/if}}
 	</div>
 </template>
 
 <template name="profile_favorites">
-	<div class="profile-favorites">
+	<div class="profile-favorites clearfix">
 	<h3><a href="{{pathFor 'favorites'}}">Mijn favorieten</a></h3>
 	{{#each favorites}}
 	<a href="{{pathFor 'product'}}">
@@ -34,5 +37,14 @@
 		{{/each}}
 	</a>
 	{{/each}}
+	</div>
+</template>
+
+<template name="profile_currentprojects">
+	<div class="profile-currentprojects clearfix">
+		<h3>Lopende projecten</h3>
+		{{#each projects}}
+		<a href="{{pathFor 'project'}}"><em>{{title}}</em>Gemaakt door {{maker}}</a>
+		{{/each}}
 	</div>
 </template>

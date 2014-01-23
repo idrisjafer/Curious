@@ -1,0 +1,162 @@
+<template name="newcommission_progress">
+	<div class="new-commisssion-progress">
+
+	</div>
+</template>
+
+<template name="newcommission_content">
+	<div class="new-commission-content">
+
+		<form id="new-commission" action="action">
+
+			<div class="step one">
+				<h3>1. Opdracht beschrijven</h3>
+				<p>Bij de volgende 4 stappen ga je informatie geven over je opdracht. Door duidelijk aan te geven wat de wensen zijn die je hebt, is het voor je gekozen maker makkelijker gerichte vragen te stellen. De eerste stap die we gaan maken is het beschrijven van je opdracht.</p>
+
+				<label><em>Titel opdracht</em>Geef je opdracht een pakkende titel mee.</label>
+				<input type="text" id="commission-title" />
+
+				<label><em>Opdrachtomschrijving</em>Beschrijf hier gedetailleerd je opdracht. Vermeld bijvoorbeeld de afmeting, materiaal en kleur.</label>
+				<textarea id="commission-description"></textarea>
+
+				<div class="new-commission-controls">
+					<a href="#" class="next">Volgende stap</a>
+				</div>
+			</div>
+
+			<div class="step two hidden-right">
+				<h3>2. Inspiratie toevoegen</h3>
+				<p>Bij stap twee is het de bedoeling dat je inspiratie toevoegd die je bij Curious hebt gevonden. Je zult vast en zeker een aantal favorieten hebben die je hebben geholpen om je idee van je opdracht vorm te geven. Deel deze favorieten dan ook met je maker zodat je maker geinspireerd kan worden door wat jij hebt gezien.</p>
+
+				<label><em>Voeg foto's toe</em>Kies uit je favorieten de foto's die jou hebben geinspireerd om je opdracht te formuleren.</label>
+
+				{{#isolate}}
+				{{> newcommission_favorites}}
+				{{/isolate}}
+				<input type="text" id="commission-favorite1" />
+				<input type="text" id="commission-favorite2" />
+				<input type="text" id="commission-favorite3" />
+				<input type="text" id="commission-favorite4" />
+
+				<div class="choose-favorites hidden-bottom">
+				{{#each favorites}}
+					{{#if ifPic1}}
+						{{#each picture1}}
+				        	<div><img src="{{cfsFileUrl "fileHandler"}}"></div>
+						{{/each}}
+					{{/if}}
+					{{#if ifPic2}}
+						{{#each picture2}}
+				        	<div><img src="{{cfsFileUrl "fileHandler"}}"></div>
+						{{/each}}
+					{{/if}}
+					{{#if ifPic3}}
+						{{#each picture3}}
+				        	<div><img src="{{cfsFileUrl "fileHandler"}}"></div>
+						{{/each}}
+					{{/if}}
+					{{#if ifPic4}}
+						{{#each picture4}}
+				        	<div><img src="{{cfsFileUrl "fileHandler"}}"></div>
+						{{/each}}
+					{{/if}}
+					{{#if ifPic5}}
+						{{#each picture5}}
+				        	<div><img src="{{cfsFileUrl "fileHandler"}}"></div>
+						{{/each}}
+					{{/if}}
+					{{#if ifPic6}}
+						{{#each picture6}}
+				        	<div><img src="{{cfsFileUrl "fileHandler"}}"></div>
+						{{/each}}
+					{{/if}}
+				{{/each}}
+				</div>
+
+				<div class="new-commission-controls">
+					<a href="#" class="previous">Vorige stap</a>
+					<a href="#" class="skip">Ik wil geen foto's toevoegen</a>
+					<a href="#" class="next">Volgende stap</a>
+				</div>
+			</div>
+
+			<div class="step three hidden-right">
+				<h3>3. Extra informatie</h3>
+				<p>Stap drie is bedoeld om uit je gekozen inspiratiebronnen extra informatie toe te voegen. Wellicht heb je een bepaalde foto gekozen vanwege de mooie details in het voorwerp. Geef dit dan ook tekstueel aan. Je kunt zelf bepalen welke foto's extra toelichting verdienen. Deze stap is welliswaar niet verplicht.</p>
+
+				<label><em>Detail beschrijving toevoegen</em>Tap een op een foto om tekstueel extra informatie te geven.</label>
+				{{#isolate}}
+				{{> newcommission_favorites}}
+				{{/isolate}}
+
+				<div class="commission-favorite1-text hidden">
+					<span class="save">Opslaan</span>
+					<textarea></textarea>
+				</div>
+				<div class="commission-favorite2-text hidden">
+					<span class="save">Opslaan</span>
+					<textarea></textarea>
+				</div>
+				<div class="commission-favorite3-text hidden">
+					<span class="save">Opslaan</span>
+					<textarea></textarea>
+				</div>
+				<div class="commission-favorite4-text hidden">
+					<span class="save">Opslaan</span>
+					<textarea></textarea>
+				</div>
+
+				<div class="new-commission-controls">
+					<a href="#" class="previous">Vorige stap</a>
+					<a href="#" class="next">Volgende stap</a>
+				</div>
+			</div>
+
+			<div class="step four hidden-right">
+				<h3>4. Opdracht overzicht</h3>
+				<p>Hieronder vind je een overzicht van je opdracht. Zodra je er klaar voor bent kun je door op 'verstuur opdracht' te drukken je opdracht dan ook werkelijk versturen naar de maker van je keuze.</p>
+
+				<h4>{{projectname}}</h4>
+				<p>{{projectdescription}}</p>
+
+				{{#isolate}}
+				{{> newcommission_favorites}}
+				{{/isolate}}
+
+				<div class="new-commission-controls">
+					<a href="#" class="previous">Vorige stap</a>
+					<a href="#" class="next create-project">Verzend de opdracht naar {{makername}}</a>
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+</template>
+
+<template name="newcommission_favorites">
+	<div class="new-commission-favorites">
+		<ul class="choose-favorites-buttons">
+			<li class="favorite1">+
+			{{#each favorite1}}
+		        <img src="{{cfsFileUrl "fileHandler"}}">
+			{{/each}}
+			</li>
+			<li class="favorite2 hidden">+
+			{{#each favorite2}}
+		        <img src="{{cfsFileUrl "fileHandler"}}">
+			{{/each}}
+			</li>
+			<li class="favorite3 hidden">+
+			{{#each favorite3}}
+		        <img src="{{cfsFileUrl "fileHandler"}}">
+			{{/each}}
+			</li>
+			<li class="favorite4 hidden">+
+			{{#each favorite4}}
+		        <img src="{{cfsFileUrl "fileHandler"}}">
+			{{/each}}
+			</li>
+		</ul>
+	</div>
+</template>

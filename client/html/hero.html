@@ -1,9 +1,11 @@
 <template name="hero_header">
 	<div class="hero-header">
-		<img src="#" />
+		{{#each profilepicture}}
+        <img src="{{cfsFileUrl "fileHandler"}}">
+		{{/each}}
 		<div>
 			<h4>{{fullname}}</h4>
-			<p>{{description}}</p>
+			<p>{{{description}}}</p>
 			<a href="#">Zie makers van {{fullname}}</a>
 		</div>
 	</div>
@@ -12,8 +14,8 @@
 <template name="hero_content">
 	<div class="info">
 		<h3>Wie is {{fullname}}</h3>
-		<p>{{whodescription}}</p>
+		<p class="who">{{{whodescription}}}</p>
 		<h3>Waarom {{fullname}}</h3>
-		<p>{{whydescription}}</p>
+		<p class="why">{{{whydescription}}}</p>
 	</div>
 </template>

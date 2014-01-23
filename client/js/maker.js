@@ -5,7 +5,7 @@ Template.maker_sidebar.helpers({
 	},
 	description: function(){
 		currentMaker = Session.get('current_maker');
-		return Meteor.users.findOne({_id: currentMaker}).profile.fulldescription;
+		return Meteor.users.findOne({_id: currentMaker}).profile.fulldescription.replace(/\n/g, "<br />");
 	},
 	rating: function(){
 		currentMaker = Session.get('current_maker');
@@ -74,3 +74,25 @@ Template.maker_content.picture1 = function() {
 	var imgID = Products.findOne({_id: currentProduct}, {}).picture1;
 	return ProductsFS.find({_id: imgID}, {});
 };
+
+Template.maker_content.rendered = function(){
+	/*$('.maker-content img').each(function(){
+			background = $(this).attr('src');
+			$(this).hide().parent().css('background-image', 'url("' + background + '")');
+
+		$(this).load(function(){
+			width = $(this).width();
+			height = $(this).height();
+
+			console.log(width);
+			console.log(height);
+
+			if(width < height){
+			$(this).css('width', '100%').css('height', 'auto');
+			}
+			else{
+				$(this).css('height', '100%').css('width', 'auto').css('margin-left', -(width / 2));
+			}
+		})
+	});*/
+}

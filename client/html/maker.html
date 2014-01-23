@@ -6,7 +6,7 @@
 			{{/each}}
 		</div>
 		<h4>{{fullname}}</h4>
-		<p>{{description}}</p>
+		<p>{{{description}}}</p>
 		<span class="maker-contact-link">Neem contact op</span>
 		<div class="maker-rating">
 			<span><em>{{rating}}</em>Rapportcijfer</span>
@@ -26,13 +26,17 @@
 		{{#if availabilityIsHigh}}
 		<span class="availability high">Niet beschikbaar</span>
 		{{/if}}
+		{{#if availabilityIsLow}}
+		<a href="{{pathFor 'newcommission'}}">Opdracht indienen</a>
+		{{/if}}
+		{{#if availabilityIsMedium}}
+		<a href="{{pathFor 'newcommission'}}">Opdracht indienen</a>
+		{{/if}}
 		<div class="maker-products">
 			{{#each products}}
-			<a href="{{pathFor 'product'}}">
 				{{#each picture1}}
-		        <img src="{{cfsFileUrl "fileHandler"}}">
+				<a href="{{pathFor 'product'}}" style="background-image: url({{cfsFileUrl "fileHandler"}})"></a>
 				{{/each}}
-			</a>
 			{{/each}}
 		</div>
 	</div>

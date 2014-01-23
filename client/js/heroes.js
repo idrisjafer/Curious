@@ -9,3 +9,9 @@ Template.heroes_overview.events({
     Session.set('current_hero', this._id);
   }
 });
+
+Template.heroes_overview.profilepicture = function() {
+  currentHero = this._id;
+  var imgID = Meteor.users.findOne({_id: currentHero}).profile.bigpicture;
+  return ProfilesFS.find({_id: imgID}, {});
+};

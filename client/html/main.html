@@ -19,10 +19,18 @@
 	<nav class="hidden">
 		<ul>
 			<li><a href="{{pathFor 'home'}}">Dashboard</a></li>
+			<li><a href="{{pathFor 'profile'}}">Profiel</a></li>
 			<li><a href="#">Inbox</a></li>
-			<li><a href="{{pathFor 'favorites'}}">Mijn Favorieten</a></li>
-			<li><a href="{{pathFor 'admin'}}">Admin</a></li>
+			<li><a href="{{pathFor 'favorites'}}">Favorieten</a></li>
+			<li><a href="{{pathFor 'heroes'}}">Heroes</a></li>
+			<li><a href="{{pathFor 'products'}}">Inspiratie board</a></li>
 		</ul>
+		<script>
+		    objectFit.polyfill({
+		        selector: 'img',
+		        fittype: 'cover'
+		    });
+		</script>
 	</nav>
 </template>
 
@@ -104,5 +112,20 @@
 	<div class="hero">
 		{{> hero_header}}
 		{{> hero_content}}
+	</div>
+</template>
+
+<template name="newcommission_screen">
+	<div class="new-commission">
+		{{> newcommission_progress}}
+		{{> newcommission_content}}
+	</div>
+</template>
+
+<template name="project_screen">
+	<div class="project">
+		{{> project_info}}
+		{{> project_timeline}}
+		{{> project_milestone}}
 	</div>
 </template>

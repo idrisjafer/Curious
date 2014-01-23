@@ -6,17 +6,77 @@
 			<input  class="product-title" type="text" name="title" placeholder="Titel" />
 			<textarea class="product-description" placeholder="Beschrijving"></textarea>
 			<input name="files" type="file" class="product-upload1">
-			<input class="product-picture1" type="url" name="foto1" placeholder="ID foto 1" />
+			<input class="product-picture1 hidden" type="url" name="foto1" placeholder="ID foto 1" />
 			<input name="files" type="file" class="product-upload2">
-			<input class="product-picture2" type="url" name="foto2" placeholder="ID foto 2" />
+			<input class="product-picture2 hidden" type="url" name="foto2" placeholder="ID foto 2" />
 			<input name="files" type="file" class="product-upload3">
-			<input class="product-picture3" type="url" name="foto3" placeholder="ID foto 3" />
+			<input class="product-picture3 hidden" type="url" name="foto3" placeholder="ID foto 3" />
 			<input name="files" type="file" class="product-upload4">
-			<input class="product-picture4" type="url" name="foto4" placeholder="ID foto 4" />
+			<input class="product-picture4 hidden" type="url" name="foto4" placeholder="ID foto 4" />
 			<input name="files" type="file" class="product-upload5">
-			<input class="product-picture5" type="url" name="foto5" placeholder="ID foto 5" />
+			<input class="product-picture5 hidden" type="url" name="foto5" placeholder="ID foto 5" />
 			<input name="files" type="file" class="product-upload6">
-			<input class="product-picture6" type="url" name="foto6" placeholder="ID foto 6" />
+			<input class="product-picture6 hidden" type="url" name="foto6" placeholder="ID foto 6" />
+			<select id="product-category1">
+				<option value="geen" autoselect>Geen categorie</option>
+				<!--<option value="schilderijen">Schilderijen</option>-->
+				<option value="kleding">Kleding</option>
+				<!--<option value="denim">Denim</option>-->
+				<option value="mannen">Mannen</option>
+				<option value="vrouwen">Vrouwen</option>
+				<option value="kids">Kinderen</option>
+				<!--<option value="huiseninrichting">Huis &amp; inrichting</option>-->
+				<!--<option value="doehetzelf">Doe het zelf</option>-->
+				<!--<option value="jurken">Jurken</option>-->
+				<option value="schoenen">Schoenen</option>
+				<option value="sieraden">Sieraden</option>
+				<option value="meubels">Meubels</option>
+				<option value="kunst">Kunst</option>
+				<option value="gadgets">Gadgets</option>
+				<option value="tassen">Tassen</option>
+				<option value="accessoires">Accessoires</option>
+				<option value="overige">Overige</option>
+			</select>
+			<select id="product-category2">
+				<option value="geen" autoselect>Geen categorie</option>
+				<!--<option value="schilderijen">Schilderijen</option>-->
+				<option value="kleding">Kleding</option>
+				<!--<option value="denim">Denim</option>-->
+				<option value="mannen">Mannen</option>
+				<option value="vrouwen">Vrouwen</option>
+				<option value="kids">Kinderen</option>
+				<!--<option value="huiseninrichting">Huis &amp; inrichting</option>-->
+				<!--<option value="doehetzelf">Doe het zelf</option>-->
+				<!--<option value="jurken">Jurken</option>-->
+				<option value="schoenen">Schoenen</option>
+				<option value="sieraden">Sieraden</option>
+				<option value="meubels">Meubels</option>
+				<option value="kunst">Kunst</option>
+				<option value="gadgets">Gadgets</option>
+				<option value="tassen">Tassen</option>
+				<option value="accessoires">Accessoires</option>
+				<option value="overige">Overige</option>
+			</select>
+			<select id="product-category3">
+				<option value="geen" autoselect>Geen categorie</option>
+				<!--<option value="schilderijen">Schilderijen</option>-->
+				<option value="kleding">Kleding</option>
+				<!--<option value="denim">Denim</option>-->
+				<option value="mannen">Mannen</option>
+				<option value="vrouwen">Vrouwen</option>
+				<option value="kids">Kinderen</option>
+				<!--<option value="huiseninrichting">Huis &amp; inrichting</option>-->
+				<!--<option value="doehetzelf">Doe het zelf</option>-->
+				<!--<option value="jurken">Jurken</option>-->
+				<option value="schoenen">Schoenen</option>
+				<option value="sieraden">Sieraden</option>
+				<option value="meubels">Meubels</option>
+				<option value="kunst">Kunst</option>
+				<option value="gadgets">Gadgets</option>
+				<option value="tassen">Tassen</option>
+				<option value="accessoires">Accessoires</option>
+				<option value="overige">Overige</option>
+			</select>
 			<input class="submit-product" type="submit" value="Toevoegen">
 		</form>
 	</div>
@@ -48,28 +108,36 @@
 	<div class="edit-profile">
 		<h2>Profiel aanpassen</h2>
 		<p>Je past het profiel aan waaronder je nu bent ingelogd, je kunt dit zovaak doen als dat je wilt.</p>
-		<p><strong>Profielfoto kan later worden gedaan, omdat daar nog geen definitief formaat voor is gekozen.</strong></p>
 		<form id="edit-profile" action="action">
 			<input type="text" id="profile-full-name" placeholder="Volledige naam" value="{{fullname}}" />
-			<input name="files" type="file" class="profile-upload">
-			<input id="profile-picture" type="url" placeholder="URL Profielfoto" value="{{profilepicture}}" />
-			<input type="number" id="profile-rating" placeholder="Rating" min="1" max="10" value="{{rating}}" />
-			<input type="number" id="profile-rating-amount" placeholder="Aantal ratings" value="{{ratingamount}}" />
+			<span>Profielfoto</span><input name="files" type="file" class="profile-upload">
+			<input id="profile-picture" class="hidden" type="url" placeholder="Profielfoto" value="{{profilepicture}}" />
+			{{#if roleIsHero}}
+			<span>Grote foto</span><input name="files" type="file" class="profile-large-upload">
+			<input id="profile-large-picture" class="hidden" type="url" placeholder="Grote profielfoto" value="" />
 			<textarea id="profile-full-description" placeholder="Beschrijving">{{fulldescription}}</textarea>
 			<textarea id="profile-who-description" placeholder="Wie">{{whodescription}}</textarea>
 			<textarea id="profile-why-description" placeholder="Waarom">{{whydescription}}</textarea>
+			{{/if}}
+			{{#if roleIsNormal}}
 			<input type="text" id="profile-address" placeholder="Adres" value="{{address}}" />
 			<input type="text" id="profile-postal-code" placeholder="Postcode" value="{{postalcode}}" />
 			<input type="text" id="profile-city" placeholder="Woonplaats" value="{{city}}" />
-			<select id="profile-role">
-				<option value="normal" {{#if roleIsNormal}}selected{{/if}}>Normale gebruiker</option>
-				<option value="hero" {{#if roleIsHero}}selected{{/if}}>Hero</option>
-				<option value="maker" {{#if roleIsMaker}}selected{{/if}}>Maker</option>
-			</select>
+			{{/if}}
+			{{#if roleIsMaker}}
+			<textarea id="profile-full-description" placeholder="Beschrijving">{{fulldescription}}</textarea>
+			<input type="number" id="profile-rating" placeholder="Rating" min="1" max="10" value="{{rating}}" />
+			<input type="number" id="profile-rating-amount" placeholder="Aantal ratings" value="{{ratingamount}}" />
 			<select id="profile-availability">
 				<option value="low" {{#if availabilityIsLow}}selected{{/if}}>Beschikbaar</option>
 				<option value="medium" {{#if availabilityIsMedium}}selected{{/if}}>Beperkt beschikbaar</option>
 				<option value="high" {{#if availabilityIsHigh}}selected{{/if}}>Niet beschikbaar</option>
+			</select>
+			{{/if}}
+			<select id="profile-role">
+				<option value="normal" {{#if roleIsNormal}}selected{{/if}}>Normale gebruiker</option>
+				<option value="hero" {{#if roleIsHero}}selected{{/if}}>Hero</option>
+				<option value="maker" {{#if roleIsMaker}}selected{{/if}}>Maker</option>
 			</select>
 			<input type="submit" id="save-profile" value="Wijzigingen opslaan" />
 		</form>

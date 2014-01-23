@@ -9,7 +9,13 @@ Template.add_product.events({
       picture4: $('.product-picture4').val(),
       picture5: $('.product-picture5').val(),
       picture6: $('.product-picture6').val(),
-      maker: Meteor.userId()
+      maker: Meteor.userId(),
+      category: [
+        $('#product-category1').val(),
+        $('#product-category2').val(),
+        $('#product-category3').val()
+      ],
+      date_created: (new Date()).getTime()
     });
 
     alert('Je product is toegevoegd');
@@ -53,6 +59,7 @@ Template.edit_profile.events({
     Meteor.users.update({_id: Meteor.userId()}, {$set: {profile: {
       fullname: $('#profile-full-name').val(), 
       profilepicture: $('#profile-picture').val(),
+      bigpicture: $('#profile-large-picture').val(),
       rating: $('#profile-rating').val(),
       ratingamount: $('#profile-rating-amount').val(),
       fulldescription: $('#profile-full-description').val(),
@@ -73,14 +80,22 @@ Template.edit_profile.events({
     var newFileID = ProfilesFS.storeFiles(files);
     $('#profile-picture').val(newFileID);
   },
+  'change .profile-large-upload': function (e) {
+    var files = e.target.files;
+    var newFileID = ProfilesFS.storeFiles(files);
+    $('#profile-large-picture').val(newFileID);
+  }
 });
 
 Template.edit_profile.helpers({
   fullname: function(){ return Meteor.user().profile.fullname; },
   profilepicture: function(){ return Meteor.user().profile.profilepicture; },
+  bigpicture: function(){ return Meteor.user().profile.bigpicture; },
   rating: function(){ return Meteor.user().profile.rating; },
   ratingamount: function(){ return Meteor.user().profile.ratingamount; },
   fulldescription: function(){ return Meteor.user().profile.fulldescription; },
+  whydescription: function(){ return Meteor.user().profile.whydescription; },
+  whodescription: function(){ return Meteor.user().profile.whodescription; },
   address: function(){ return Meteor.user().profile.address; },
   postalcode: function(){ return Meteor.user().profile.postalcode; },
   city: function(){ return Meteor.user().profile.city; },
@@ -158,12 +173,7 @@ Template.register_hero.events({
 });
 
 Template.admin_screen.isMaker = function(){
-  if(Meteor.user()){
-    if(Makers.findOne({makerId: Meteor.userId()})){
-      return true;
-    }
-    else{
-      return false;
-    }
+  if(Meteor.user().profile.role === 'maker'){
+      return true
   }
 };

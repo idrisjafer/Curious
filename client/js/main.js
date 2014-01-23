@@ -32,11 +32,11 @@ Router.map(function () {
     before: function(){
       if (!Meteor.user()) {
         this.render('login_screen');
-        $('.status-bar').addClass('hidden');
+        hideStatusbar();
         this.stop();
       }
       else{
-        $('.status-bar').removeClass('hidden');
+        showStatusbar();
       }
     },
     after: function() {
@@ -50,11 +50,11 @@ Router.map(function () {
     before: function(){
       if (!Meteor.user()) {
         this.render('login_screen');
-        $('.status-bar').addClass('hidden');
+        hideStatusbar();
         this.stop();
       }
       else{
-        $('.status-bar').removeClass('hidden');
+        showStatusbar();
       }
     },
     after: function() {
@@ -68,11 +68,11 @@ Router.map(function () {
     before: function(){
       if (!Meteor.user()) {
         this.render('login_screen');
-        $('.status-bar').addClass('hidden');
+        hideStatusbar();
         this.stop();
       }
       else{
-        $('.status-bar').removeClass('hidden');
+        showStatusbar();
       }
     },
     after: function() {
@@ -86,11 +86,11 @@ Router.map(function () {
     before: function(){
       if (!Meteor.user()) {
         this.render('login_screen');
-        $('.status-bar').addClass('hidden');
+        hideStatusbar();
         this.stop();
       }
       else{
-        $('.status-bar').removeClass('hidden');
+        showStatusbar();
       }
     },
     after: function() {
@@ -104,11 +104,11 @@ Router.map(function () {
     before: function(){
       if (!Meteor.user()) {
         this.render('login_screen');
-        $('.status-bar').addClass('hidden');
+        hideStatusbar();
         this.stop();
       }
       else{
-        $('.status-bar').removeClass('hidden');
+        showStatusbar();
       }
     },
     after: function() {
@@ -124,11 +124,11 @@ Router.map(function () {
     before: function(){
       if (!Meteor.user()) {
         this.render('login_screen');
-        $('.status-bar').addClass('hidden');
+        hideStatusbar();
         this.stop();
       }
       else{
-        $('.status-bar').removeClass('hidden');
+        showStatusbar();
       }
     },
     after: function() {
@@ -142,11 +142,11 @@ Router.map(function () {
     before: function(){
       if (!Meteor.user()) {
         this.render('login_screen');
-        $('.status-bar').addClass('hidden');
+        hideStatusbar();
         this.stop();
       }
       else{
-        $('.status-bar').removeClass('hidden');
+        showStatusbar();
       }
     },
     after: function() {
@@ -160,11 +160,11 @@ Router.map(function () {
     before: function(){
       if (!Meteor.user()) {
         this.render('login_screen');
-        $('.status-bar').addClass('hidden');
+        hideStatusbar();
         this.stop();
       }
       else{
-        $('.status-bar').removeClass('hidden');
+        showStatusbar();
       }
     },
     after: function() {
@@ -178,11 +178,11 @@ Router.map(function () {
     before: function(){
       if (!Meteor.user()) {
         this.render('login_screen');
-        $('.status-bar').addClass('hidden');
+        hideStatusbar();
         this.stop();
       }
       else{
-        $('.status-bar').removeClass('hidden');
+        showStatusbar();
       }
     },
     after: function() {
@@ -190,4 +190,48 @@ Router.map(function () {
     }
   });
 
+  this.route('newcommission', {
+    path: '/newcommission',
+    template: 'newcommission_screen',
+    before: function(){
+      if (!Meteor.user()) {
+        this.render('login_screen');
+        hideStatusbar();
+        this.stop();
+      }
+      else{
+        showStatusbar();
+      }
+    },
+    after: function() {
+      $('.status-bar span').html('Opdracht geven');
+    }
+  });
+
+    this.route('project', {
+    path: '/project',
+    template: 'project_screen',
+    before: function(){
+      if (!Meteor.user()) {
+        this.render('login_screen');
+        hideStatusbar();
+        this.stop();
+      }
+      else{
+        showStatusbar();
+      }
+    },
+    after: function() {
+      $('.status-bar span').html('Project');
+    }
+  });
+
 });
+
+function hideStatusbar(){
+  $('.status-bar').addClass('hidden');
+}
+
+function showStatusbar(){
+  $('.status-bar').removeClass('hidden');
+}

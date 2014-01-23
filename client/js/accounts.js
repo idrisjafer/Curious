@@ -83,7 +83,7 @@ Template.register.events({
 
     Accounts.createUser({email: email, password: password, profile: {fullname: ''}}, function(err){
         if (err){
-          alert('error');
+          alert('error:' + err);
         }
         else{
           alert('hoi');

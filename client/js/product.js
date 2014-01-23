@@ -80,7 +80,7 @@ Template.product_info.helpers({
 	},
 	description: function(){
 		currentProduct = Session.get('current_product');
-		return Products.findOne({_id: currentProduct}, {}).description;
+		return Products.findOne({_id: currentProduct}, {}).description.replace(/\n/g, "<br />");
 	}
 });
 
@@ -98,7 +98,7 @@ Template.product_sidebar.helpers({
 	description: function(){
 		currentProduct = Session.get('current_product');
 		currentMakerId = Products.findOne({_id: currentProduct}, {}).maker;
-		return Meteor.users.findOne({_id: currentMakerId}).profile.fulldescription;
+		return Meteor.users.findOne({_id: currentMakerId}).profile.fulldescription.replace(/\n/g, "<br />");
 	},
 	favorited: function(){
 		favorites = Meteor.user().profile.favorites;

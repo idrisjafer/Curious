@@ -1,38 +1,72 @@
-BENODIGDE INFORMATIE
-	* Welke categorieën komen er onder de producten?
-	* Hoe loopt de flow van de applicatie, met name de productpagina?
-	* Welke informatie over het product moet er aanwezig zijn op de productpagina?
-	* Welke informatie over de maker moet er aanwezig zijn op de makerpagina?
+SPLASH	** 										Skinnen
+	** 		Aanmelden 							Skinnen
+	**		Inloggen 							Skinnen
 
-PRODUCTPAGINA:
-	On small scroll on photo:
-		* Titel van product
-		* Materiaal
-		* Productietijd
-		* Gemaakt op
-		* Korte beschrijving (2-3 regels)
-	Detail:
-		* Helemaal geen details
-	Mega Detail pagina:
-		* Foto maker
-		* Naam van de maker
-		* Eerste paar regels van zijn profiel
-		* Zijn smaak tags
-		* Button naar maker
-		* Titel product
-		* Lange beschrijving product
-		* Materiaal
-		* Afmetingen (lbh)
-		* Productietijd
-		* Gemaakt op
+AANMELDEN ** 									Skinnen
+	**		Facebook Aanmelden 					Skinnen, wordt niet functioneel
+	** 		Email aanmeld 						Skinnen
 
-REQUESTS VAN JORGE:
-	* Opzij scrollen bij productpagina's
-	* Naar boven vloeiende scroll, naar beneden scroll per foto
+INLOGGEN ** 									Skinnen
+	**		Facebook inlog 						Skinnen, wordt niet functioneel
+	**		Email inlog 						Skinnen
 
-ANIMATIES PRODUCTPAGE:
-	* Titel gaat omhoog + wordt groter
-	* Rest van de info komt omhoog
+DASHBOARD **									Foto's functioneel maken, beslissen waar alles naartoe linkt
+	** 		Hero pagina 						Skinnen, grootte foto's beslissen
+	**		Alle heroes 						Grootte foto's beslissen
+	***		Mijn favorieten 
+	*		Nieuwste blogpost 					Nog geen ontwerp
+	**		Nieuwe items 						Beslissen: Aparte pagina of categorie?
+	**		Hero pick's 						Beslissen: Aparte pagina of categorie?
+	**		Inspiratieboard 					Filterfuncties functioneel maken en skinnen
+	***		Mijn profiel
+	**		Menu 								Beslissen wat er in het menu moet komen te staan
 
-MAILEN:
-	* info@wais.nu (dude van Joël)
+UITGELICHTE HEROES ** 							Foto's functioneel maken, grootte foto beslissen
+	*		Makers onder hero 					Functioneel maken, skinnen
+	*		Favorieten van hero 				Functioneel maken, skinnen
+	*		Blog 								Nog geen ontwerp
+	*		Blogpost 							Nog geen ontwerp
+	*		Volgende hero 						Swipe functie maken
+
+ALLE HEROES ** 									Beslissen grootte foto's
+	**		Hero pagina 						Beslissen grootte foto's
+
+MIJN FAVORIETEN ***
+	***		Productpagina
+
+NIEUWSTE BLOGPOST * 							Nog geen ontwerp
+	***		Productpagina
+	***		Makerpagina
+
+NIEUWE ITEMS * 									Beslissen: Aparte pagina of categorie?
+	***		Productpagina
+
+HERO PICKS * 									Beslissen: Aparte pagina of categorie?
+	***		Productpagina
+	**		Hero pagina 						Beslissen grootte foto's
+
+INSPIRATIEBOARD ** 								Filterfuncties functioneel maken en skinnen
+	*** 	Productpagina
+	*		Zoeken 								Filterfuncties functioneel maken en skinnen
+
+MIJN PROFIEL ** 								Projecten functioneel maken, maximum op favorieten zetten
+	*		Lopende projecten 					Projecten functioneel maken
+	*		Voltooide projecten 				Projecten functioneel maken
+	***		Mijn favorieten 					
+	***		Inloggegevens
+	***		Persoonsgegevens
+
+MENU ** 										Beslissen welke menuitems er in komen
+	**		Dashboard 							Foto's functioneel maken, beslissen welke items op dashboard komen
+	*		Inbox 								Functioneel maken, skinnen, wordt mogelijk fake
+	***		Mijn favorieten
+	**		Inspiratieboard 					Filterfuncties functioneel maken en skinnen
+
+MAKER PAGINA ** 								Review systeem functioneel maken
+	*		Beoordelingen 						Review systeem functioneel maken, wordt waarschijnlijk fake
+	*		Contact								Functioneel maken, wordt mogelijk fake
+	*		Vraag offerte aan 					Projecten functioneel maken, skinnen
+	***		Productpagina
+
+PRODUCTPAGINA ***
+	**		Maker pagina 						Review systeem functioneel maken

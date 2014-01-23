@@ -10,6 +10,19 @@ Template.profile_sidebar.helpers({
   	city: function(){ return Meteor.user().profile.city; }
 });
 
+Template.profile_content.helpers({
+	ifFavorites: function(){
+		if(Meteor.user().profile.favorites.length > 0){
+			return true;
+		}
+	},
+	ifProjects: function(){
+		if(Projects.find({'user': userId}).length > 0){
+			return true;
+		}
+	}
+})
+
 Template.profile_favorites.helpers({
 	favorites: function(){
 		return Meteor.user().profile.favorites;
@@ -24,6 +37,24 @@ Template.profile_favorites.events({
 	'click .profile-favorites a': function(){
 		productID = JSON.stringify($(this)).slice(6,23);
 		Session.set('current_product', productID);
+	}
+});
+
+Template.profile_currentprojects.events({
+	'click .profile-currentprojects a': function(){
+		projectID = this;
+		Session.set('current_project', projectID);
+	}
+});
+
+Template.profile_currentprojects.helpers({
+	projects: function(){
+		userId = Meteor.userId();
+		return Projects.find({'user': userId});
+	},
+	maker: function(){
+		maker = this.maker;
+		return Meteor.users.findOne({_id: maker}).profile.fullname;
 	}
 });
 
