@@ -1,5 +1,7 @@
 if (Meteor.isClient) {
   Meteor.subscribe('userData');
+  Meteor.subscribe('productsData');
+  Meteor.subscribe('projectsData');
   $(function() {
       FastClick.attach(document.body);
   });
@@ -9,6 +11,8 @@ if (Meteor.isClient) {
 
 Deps.autorun(function() {
     Meteor.subscribe('userData');
+    Meteor.subscribe('productsData');
+    Meteor.subscribe('projectsData');
 });
 
 Router.configure({

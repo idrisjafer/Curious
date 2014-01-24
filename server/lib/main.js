@@ -1,6 +1,6 @@
 if (Meteor.isServer) {
 
-		var handler = {
+	var handler = {
         "fileHandler": function (options) {
             return {
                 blob: options.blob,
@@ -21,6 +21,12 @@ if (Meteor.isServer) {
 	// Publish custom user fields to client
 	Meteor.publish("userData", function() {
 		return Meteor.users.find({}, {fields : {'emails': 1, 'profile': 1}});
+	});
+	Meteor.publish("productsData", function() {
+		return Products.find();
+	});
+	Meteor.publish("projectsData", function(){
+		return Projects.find();
 	});
 
 	// Publish uploads

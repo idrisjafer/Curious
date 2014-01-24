@@ -135,7 +135,8 @@ h4{
 	display: block;
 	width: 32px;
 	height: 22px;
-	background: url('/icon-previous.png');
+	background: url('/icon-previous@2x.png');
+	background-size: 32px 22px;
 	float: left;
 	margin: 0 0 0 20px;
 }
@@ -155,7 +156,8 @@ h4{
 .status-bar span{
 	display: inline-block;
 	padding: 0 29px 0 0;
-	background-image: url('/icon-showmenu.png');
+	background-image: url('/icon-showmenu@2x.png');
+	background-size: 18px 12px;
 	background-position: right 8px;
 	background-repeat: no-repeat;
 }
@@ -458,7 +460,7 @@ nav a{
 
 .home ul{
 	display: block;
-	margin-bottom: 30px;
+	padding-bottom: 30px;
 }
 
 .home li{
@@ -566,7 +568,8 @@ nav a{
 	height: 15px;
 	display: block;
 	content: '';
-	background-image: url('/icon-linkarrow.png');
+	background-image: url('/icon-linkarrow@2x.png');
+	background-size: 8px 15px;
 	float: right;
 	margin: 4px 0 0 10px;
 }
@@ -775,7 +778,8 @@ nav a{
 	height: 15px;
 	display: block;
 	content: '';
-	background-image: url('/icon-linkarrow.png');
+	background-image: url('/icon-linkarrow@2x.png');
+	background-size: 8px 15px;
 	float: right;
 	margin: 4px 0 0 10px;
 }
@@ -829,7 +833,8 @@ nav a{
 	height: 20px;
 	display: block;
 	float: right;
-	background-image: url('/icon-edit.png');
+	background-image: url('/icon-edit@2x.png');
+	background-size: 19px 20px;
 }
 
 .profile .profile-content{
@@ -1014,17 +1019,20 @@ nav a{
 	font-size: 17px;
 	line-height: 48px;
 	padding: 0 0 30px 68px;
-	background-image: url('/icon-mediumavailability.png');
+	background-image: url('/icon-mediumavailability@2x.png');
+	background-size: 48px 48px;
 	background-repeat: no-repeat;
 }
 
 .maker .maker-content .availability.low{
-	background-image: url('/icon-lowavailability.png');
+	background-image: url('/icon-lowavailability@2x.png');
+	background-size: 48px 48px;
 	color: #7ED321;
 }
 
 .maker .maker-content .availability.high{
-	background-image: url('/icon-highavailability.png');
+	background-image: url('/icon-highavailability@2x.png');
+	background-size: 48px 48px;
 	color: #FF3D00;
 }
 
@@ -1156,7 +1164,8 @@ nav a{
 	height: 15px;
 	display: block;
 	content: '';
-	background-image: url('/icon-linkarrow.png');
+	background-image: url('/icon-linkarrow@2x.png');
+	background-size: 8px 15px;
 	float: right;
 	margin: 5px 0 0 10px;
 }
