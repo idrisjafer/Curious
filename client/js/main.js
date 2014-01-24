@@ -208,7 +208,7 @@ Router.map(function () {
     }
   });
 
-    this.route('project', {
+  this.route('project', {
     path: '/project',
     template: 'project_screen',
     before: function(){
@@ -223,6 +223,24 @@ Router.map(function () {
     },
     after: function() {
       $('.status-bar span').html('Project');
+    }
+  });
+
+  this.route('inbox', {
+    path: '/inbox',
+    template: 'inbox_screen',
+    before: function(){
+      if (!Meteor.user()) {
+        this.render('login_screen');
+        hideStatusbar();
+        this.stop();
+      }
+      else{
+        showStatusbar();
+      }
+    },
+    after: function() {
+      $('.status-bar span').html('Inbox');
     }
   });
 

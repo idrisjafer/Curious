@@ -85,9 +85,6 @@ Template.register.events({
         if (err){
           alert('error:' + err);
         }
-        else{
-          alert('hoi');
-        }
     });
 
     return false;

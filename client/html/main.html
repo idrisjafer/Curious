@@ -14,13 +14,13 @@
 	<div class="status-bar">
 		<a href="javascript:history.back();" class="previous"></a>
 		<span>Curious</span>
-		<a href="{{pathFor 'profile'}}" class="profile-link"></a>
+		<a href="{{pathFor 'inbox'}}" class="profile-link"></a>
 	</div>
 	<nav class="hidden">
 		<ul>
 			<li><a href="{{pathFor 'home'}}">Dashboard</a></li>
 			<li><a href="{{pathFor 'profile'}}">Profiel</a></li>
-			<li><a href="#">Inbox</a></li>
+			<li><a href="{{pathFor 'inbox'}}">Inbox</a></li>
 			<li><a href="{{pathFor 'favorites'}}">Favorieten</a></li>
 			<li><a href="{{pathFor 'heroes'}}">Heroes</a></li>
 			<li><a href="{{pathFor 'products'}}">Inspiratie board</a></li>
@@ -127,5 +127,12 @@
 		{{> project_info}}
 		{{> project_timeline}}
 		{{> project_milestone}}
+	</div>
+</template>
+
+<template name="inbox_screen">
+	<div class="inbox">
+		{{> inbox_overview}}
+		{{> inbox_messages}}
 	</div>
 </template>

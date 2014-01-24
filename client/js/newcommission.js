@@ -22,8 +22,7 @@ Template.newcommission_content.events({
 	    		description: $('.commission-favorite4-text textarea').val(),
 	    	}
 	    });
-	    alert('Project aangemaakt');
-		e.preventDefault();
+	    alert('Je project is aangemaakt.');
 	},
 	'keyup #commission-title': function(event){
 		projectname = $(event.target).val();

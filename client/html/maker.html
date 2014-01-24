@@ -17,21 +17,23 @@
 
 <template name="maker_content">
 	<div class="maker-content">
-		{{#if availabilityIsLow}}
-		<span class="availability low">Beschikbaar</span>
-		{{/if}}
-		{{#if availabilityIsMedium}}
-		<span class="availability medium">Beperkt beschikbaar</span>
-		{{/if}}
-		{{#if availabilityIsHigh}}
-		<span class="availability high">Niet beschikbaar</span>
-		{{/if}}
-		{{#if availabilityIsLow}}
-		<a href="{{pathFor 'newcommission'}}">Opdracht indienen</a>
-		{{/if}}
-		{{#if availabilityIsMedium}}
-		<a href="{{pathFor 'newcommission'}}">Opdracht indienen</a>
-		{{/if}}
+		<div class="maker-content-top clearfix">
+			{{#if availabilityIsLow}}
+			<span class="availability low">Beschikbaar</span>
+			{{/if}}
+			{{#if availabilityIsMedium}}
+			<span class="availability medium">Beperkt beschikbaar</span>
+			{{/if}}
+			{{#if availabilityIsHigh}}
+			<span class="availability high">Niet beschikbaar</span>
+			{{/if}}
+			{{#if availabilityIsLow}}
+			<a href="{{pathFor 'newcommission'}}">Opdracht indienen</a>
+			{{/if}}
+			{{#if availabilityIsMedium}}
+			<a href="{{pathFor 'newcommission'}}">Opdracht indienen</a>
+			{{/if}}
+		</div>
 		<div class="maker-products">
 			{{#each products}}
 				{{#each picture1}}

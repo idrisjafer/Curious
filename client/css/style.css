@@ -142,9 +142,10 @@ h4{
 
 .status-bar .profile-link{
 	display: block;
-	width: 32px;
-	height: 24px;
-	background: url('/icon-profile.png');
+	width: 30px;
+	height: 18px;
+	background: url('/icon-inbox@2x.png');
+	background-size: 30px 18px;
 	background-repeat: no-repeat;
 	background-position: right center;
 	float: right;
@@ -208,17 +209,12 @@ nav a{
 }
 
 .login > div h2{
-	font: 400 40px/40px 'Merriweather', Arial;
+	font-size: 48px;
+	line-height: 48px;
+	font-weight: 200;
 	text-align: center;
 	padding: 33px 0 15px 0;
 	color: #fff;
-}
-
-.login > div h3{
-	font: 100 16px/16px 'Merriweather', serif;
-	font-style: italic;
-	padding: 36px 0;
-	display: block;
 }
 
 .login > div .show-login{
@@ -232,16 +228,39 @@ nav a{
 .fb-login,
 .email-login{
 	display: block;
-	border-radius: 2px;
-	height: 62px;
-	margin-top: 22px;
-	font-size: 21px;
-	line-height: 62px;
+	height: 44px;
+	font-size: 19px;
+	line-height: 44px;
 	color: #754775;
 	width: 370px;
 	margin: 20px auto 0 auto;
 	background-color: #fff;
 	padding: 0 0 0 75px;
+	position: relative;
+}
+
+.email-login span{
+	width: 50px;
+	height: 44px;
+	position: absolute;
+	left: 0;
+	background: url('/icon-emaillogin@2x.png');
+	background-size: 27px 18px;
+	background-repeat: no-repeat;
+	background-position: 12px center;
+	border-right: 1px solid #D9D9D9;
+}
+
+.fb-login span{
+	width: 50px;
+	height: 44px;
+	position: absolute;
+	left: 0;
+	background: url('/icon-loginfacebook@2x.png');
+	background-size: 12px 22px;
+	background-repeat: no-repeat;
+	background-position: 19px center;
+	border-right: 1px solid #324A7C;
 }
 
 #create-account{
@@ -253,17 +272,15 @@ nav a{
 #create-account{
 	height: 44px;
 	line-height: 38px;
-	font-size: 22px;
-	background: #fff;
-	color: #754775;
+	font-size: 20px;
+	color: #fff;
 	display: block;
 	width: 163px;
 	float: right;
 	margin: 0 0 0 22px;
-	border-bottom-left-radius: 2px;
-	border-bottom-right-radius: 2px;
-	border-top-left-radius: 2px;
-	border-top-right-radius: 2px;
+	font-weight: 600;
+	border: 2px solid #fff;
+	background: transparent;
 }
 
 #login-form .annuleren,
@@ -275,10 +292,8 @@ nav a{
 }
 
 .fb-login{
-	background-image: url('/icon-fblogin.png');
-	background-position: 17px center;
-	background-repeat: no-repeat;
-	background-color: #fff;
+	background-color: #3B5898;
+	color: #fff;
 }
 
 .login input{
@@ -309,6 +324,12 @@ nav a{
 	transition: all .7s ease-in-out;
 	opacity: 1;
 	top: 0;
+}
+
+#login-form h2,
+#register-form h2{
+	margin-bottom: 20px;
+	white-space: nowrap;
 }
 
 #login-form.hidden,
@@ -437,14 +458,15 @@ nav a{
 
 .home ul{
 	display: block;
+	margin-bottom: 30px;
 }
 
 .home li{
 	float: left;
 	width: 305px;
+	height: 195px;
 	margin: 0 0 0 25px;
 	list-style-type: none;
-	overflow: hidden;
 	position: relative;
 }
 
@@ -456,6 +478,9 @@ nav a{
 .home li a img{
 	width: 100%;
 	height: 100%;
+	display: block;
+	background-size: cover;
+	background-position: center;
 }
 
 .home li span{
@@ -463,21 +488,28 @@ nav a{
 	font-weight: 200;
 	font-size: 17px;
 	color: #7A7A7A;
+	position: absolute;
+	bottom: -25px;
+	left: 0;
 }
 
-.home-heroes > a{
+.home-heroes-header > a{
 	float: right;
 	color: #754775;
 	font-size: 18px;
 }
 
-.home-heroes > h3{
+.home-heroes-header > h3{
 	float: left;
+}
+
+.home-heroes{
+	overflow: scroll;
 }
 
 .home-heroes ul{
 	display: block;
-	width: 1024px;
+	width: 3000px;
 	margin: 0 0 0 -27px;
 	padding: 0 0 0 27px;
 	height: 280px;
@@ -490,7 +522,7 @@ nav a{
 	width: 660px;
 	height: 240px;
 	background-color: #F6F6F6;
-	float: none;
+	float: left;
 	white-space: normal;
 	border-right: 40px solid #fff;
 	box-sizing: content-box;
@@ -502,7 +534,7 @@ nav a{
 	text-align: center;
 	float: left;
 	margin: 0 23px 0 0;
-	overflow: auto;
+	overflow: hidden;
 }
 
 .home-heroes .image img{
@@ -905,7 +937,7 @@ nav a{
 	font-size: 20px;
 	font-weight: 600;
 	text-align: center;
-	background-color: #AC91AC;
+	background-color: #754775;
 	display: block;
 	margin: 39px auto;
 }
@@ -942,10 +974,24 @@ nav a{
 
 .maker .maker-content{
 	width: 694px;
+	height: 704px;
+	overflow: scroll;
 	float: left;
 	padding: 30px 0 30px 30px;
 	transition: all .4s ease-in-out;
 	opacity: 1;
+}
+
+.maker-content-top a{
+	float: right;
+	color: #754775;
+	font-weight: 600;
+	font-size: 18px;
+	margin: 13px 30px 0 0;
+}
+
+.maker-content-top span{
+	float: left;
 }
 
 .maker .maker-content .maker-products > a{
@@ -1444,6 +1490,10 @@ progress[value]::-webkit-progress-value {
 	transition: all .3s ease-in-out;
 }
 
+.project .project-timeline .milestone:last-child div{
+	margin-left: -310px;
+}
+
 .project .project-timeline .milestone div.hidden{
 	opacity: 0;
 }
@@ -1466,12 +1516,156 @@ progress[value]::-webkit-progress-value {
 	font-size: 14px;
 }
 
+.project .project-timeline .milestone > span{
+	white-space: nowrap;
+	position: absolute;
+	bottom: -80px;
+	left: 0;
+}
+
+.project .project-milestone{
+	padding: 160px 0 0 0;
+}
+
+.project .project-milestone div.hidden{
+	display: none;
+}
+
 .project .project-milestone div img{
 	width: 511px;
 	height: 240px;
 	float: left;
+	margin-bottom: 30px;
 }
 
 .project .project-milestone div img:first-child{
 	margin-right: 2px;
+}
+
+.project .project-milestone div p{
+	display: block;
+	padding: 30px;
+}
+
+/* =============================================
+================= INBOX SCREEN =================
+============================================= */
+.inbox .inbox-overview{
+	padding: 30px;
+}
+
+.inbox .inbox-item{
+	width: 222px;
+	height: 175px;
+	background-color: #F6F6F6;
+	position: relative;
+	float: left;
+	margin: 0 25px 45px 0;
+	background-size: cover;
+	background-position: center;
+}
+
+.inbox .inbox-item:nth-child(4n){
+	margin: 0 0 45px 0;
+}
+
+.inbox .inbox-item span{
+	position: absolute;
+	bottom: -28px;
+	left: 0;
+}
+
+.inbox .inbox-item span:first-child{
+	right: 10px;
+	bottom: 6px;
+	left: auto;
+	font-weight: 600;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.17);
+	font-size: 13px;
+	color: #fff;
+}
+
+.inbox .inbox-overview{
+	transition: all .7s ease-in-out;
+	width: 1024px;
+	height: 704px;
+}
+
+.inbox .inbox-overview.small{
+	width: 283px;
+	height: 704px;
+	overflow: scroll;
+	float: left;
+	border-right: 1px solid #D4D4D4;
+}
+
+.inbox .inbox-messages{
+	width: 741px;
+	height: 704px;
+	overflow: scroll;
+	float: left;
+}
+
+.inbox .message.closed{
+	height: 0;
+	opacity: 0;
+}
+
+.inbox .message{
+	height: auto;
+	opacity: 1;
+	transition: all .5s ease-in-out;
+}
+
+.inbox .message .sender{
+	height: 46px;
+	line-height: 46px;
+	padding: 0 30px 0 30px;
+	border-bottom: 1px solid #D4D4D4;
+}
+
+.inbox .message .subject,
+.inbox .short{
+	height: 46px;
+	line-height: 46px;
+	padding: 0 30px;
+	border-bottom: 1px solid #D4D4D4;
+}
+
+.inox .short{
+	height: 46px;
+	opacity: 1;
+	transition: all .5s ease-in-out;
+}
+
+.inbox .short.open{
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+}
+
+.inbox .message .subject span:first-child,
+.inbox .message .sender span:first-child,
+.inbox .short span:first-child{
+	display: inline-block;
+	width: 123px;
+	font-weight: 600;
+}
+
+.inbox .short span:first-child{
+	color: #AC91AC;
+	font-weight: 200;
+}
+
+.inbox .message .sender span:last-child,
+.inbox .short span:last-child{
+	color: #B9B9B9;
+	font-weight: 600;
+	font-size: 13px;
+	float: right;
+}
+
+.inbox .message .message-content{
+	padding: 30px;
+	border-bottom: 1px solid #D4D4D4;
 }

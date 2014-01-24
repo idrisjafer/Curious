@@ -1,7 +1,9 @@
 <template name="home_heroes">
-	<div class="home-heroes">
+	<div class="home-heroes-header clearfix">
 		<h3>Heroes</h3>
 		<a href="{{pathFor 'heroes'}}">Bekijk alle</a>
+	</div>
+	<div class="home-heroes">
 		<ul>
 			{{#each heroes}}
 			<li>
@@ -26,25 +28,21 @@
 		<h3>Mijn Curious</h3>
 		<ul class="clearfix">
 			<li>
-				<a href="{{pathFor 'profile'}}">
-					<img src="mijnopdrachten.png" />
-					<div></div>
+				{{#each profilepicture}}
+				<a href="{{pathFor 'profile'}}" style="background-image: url({{cfsFileUrl "fileHandler"}})">
+				{{/each}}
 					<span>Profiel</span>
 				</a>
 			</li>
 
 			<li>
-				<a href="{{pathFor 'products'}}">
-					<img src="mijnopdrachten.png" />
-					<div></div>
+				<a href="{{pathFor 'inbox'}}" style="background-image: url(image-inbox.jpg)">
 					<span>Inbox</span>
 				</a>
 			</li>
 
 			<li>
-				<a href="{{pathFor 'favorites'}}">
-					<img src="mijnopdrachten.png" />
-					<div></div>
+				<a href="{{pathFor 'favorites'}}" style="background-image: url(image-favo.jpg)">
 					<span>Favorieten</span>
 				</a>
 			</li>
@@ -57,25 +55,19 @@
 		<h3>Inspiratie</h3>
 		<ul class="clearfix">
 			<li>
-				<a href="{{pathFor 'products'}}">
-					<img src="mijnopdrachten.png" />
-					<div></div>
+				<a href="{{pathFor 'products'}}" style="background-image: url(image-nieuw.jpg)">
 					<span>Nieuwe producten</span>
 				</a>
 			</li>
 
 			<li>
-				<a href="{{pathFor 'products'}}">
-					<img src="mijnopdrachten.png" />
-					<div></div>
+				<a href="{{pathFor 'products'}}" style="background-image: url(image-blog.jpg)">
 					<span>Nieuwste blog</span>
 				</a>
 			</li>
 
 			<li>
-				<a href="{{pathFor 'products'}}">
-					<img src="mijnopdrachten.png" />
-					<div></div>
+				<a href="{{pathFor 'products'}}" style="background-image: url(image-inspiratie.jpg)">
 					<span>Inspiratie board</span>
 				</a>
 			</li>

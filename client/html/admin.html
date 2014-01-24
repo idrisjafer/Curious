@@ -1,7 +1,6 @@
 <template name="add_product">
 	<div class="add-product">
 		<h2>Voeg een product toe</h2>
-		<p>Dit product wordt toegevoegd onder de maker waarop je nu bent ingelogd. Het product is later niet meer te wijzigen, dus als er iets niet goed is gegaan bij het toevoegen, geef het even door dan kan ik het in de database aanpassen. Je hoeft niet alle velden in te voeren, maar zorg dat er tenminste één foto is.</p>
 		<form id="add-product" action="action">
 			<input  class="product-title" type="text" name="title" placeholder="Titel" />
 			<textarea class="product-description" placeholder="Beschrijving"></textarea>
@@ -85,7 +84,6 @@
 <template name="register_maker">
 	<div class="register-maker">
 		<h2>Voeg een maker toe aan Curious</h2>
-		<p>Je wordt na het aanmaken gelijk ingelogd als deze maker. Het wachtwoord is altijd 'awkward'. Let op dat je in het emailadres de juiste hoofdletters gebruikt, omdat dit bij het inloggen ook uitmaakt volgens mij.</p>
 		<form id="register-maker" action="action">
 			<input type="email" id="maker-email" placeholder="Email (gebruik: NaamVanMaker@hoogwater.nl)" />
 			<input type="submit" id="create-maker" value="Toevoegen" />
@@ -96,7 +94,6 @@
 <template name="register_hero">
 	<div class="register-hero">
 		<h2>Voeg een hero toe aan Curious</h2>
-		<p>Je wordt na het aanmaken gelijk ingelogd als deze hero. Het wachtwoord is altijd 'awkward'. Let op dat je in het emailadres de juiste hoofdletters gebruikt, omdat dit bij het inloggen ook uitmaakt volgens mij.</p>
 		<form id="register-hero" action="action">
 			<input type="email" id="hero-email" placeholder="Email (gebruik: NaamVanHero@hoogwater.nl)" />
 			<input type="submit" id="create-hero" value="Toevoegen" />
@@ -107,7 +104,6 @@
 <template name="edit_profile">
 	<div class="edit-profile">
 		<h2>Profiel aanpassen</h2>
-		<p>Je past het profiel aan waaronder je nu bent ingelogd, je kunt dit zovaak doen als dat je wilt.</p>
 		<form id="edit-profile" action="action">
 			<input type="text" id="profile-full-name" placeholder="Volledige naam" value="{{fullname}}" />
 			<span>Profielfoto</span><input name="files" type="file" class="profile-upload">

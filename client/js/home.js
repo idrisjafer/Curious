@@ -15,3 +15,8 @@ Template.home_heroes.profilepicture = function() {
   var imgID = Meteor.users.findOne({_id: currentHero}).profile.profilepicture;
   return ProfilesFS.find({_id: imgID}, {});
 };
+
+Template.home_mycurious.profilepicture = function() {
+	var imgID = Meteor.user().profile.profilepicture;
+	return ProfilesFS.find({_id: imgID}, {});
+};

@@ -12,12 +12,18 @@ Template.profile_sidebar.helpers({
 
 Template.profile_content.helpers({
 	ifFavorites: function(){
-		if(Meteor.user().profile.favorites.length > 0){
-			return true;
+		if(Meteor.user().profile.favorites){
+			if(Meteor.user().profile.favorites.length > 0){
+				return true;
+			}
+			else if(Meteor.user().profile.favorites.length === undefined){
+				return false;
+			}
 		}
 	},
 	ifProjects: function(){
-		if(Projects.find({'user': userId}).length > 0){
+		userId = Meteor.userId();
+		if(Projects.find({'user': userId}).length != undefined){
 			return true;
 		}
 	}

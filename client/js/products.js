@@ -8,6 +8,9 @@ Template.products_overview.helpers({
   		}
   		else{
   			if(currentCategory == 'nieuwe'){
+	    		return Products.find({}, {sort: {'date_created': -1}});
+	    	}
+	    	else if(currentCategory == 'alle'){
 	    		return Products.find({}, {sort: {'date_created': 1}});
 	    	}
 	  		else if(currentCategory){
@@ -31,7 +34,7 @@ Template.products_filters.events({
 		$('.products-categories').toggleClass('hidden');
 		$(e.target).toggleClass('highlight');
 	},
-	'tap .products-categories li': function(e){
+	'click .products-categories li': function(e){
 		var category = $(e.target).text();
 		Session.set('current_category', $(e.target).attr('class'));
 		$('.products-current-category').text(category).toggleClass('highlight');
