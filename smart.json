@@ -1,5 +1,10 @@
 {
   "packages": {
-    "collectionFS": {}
+  	"cfs-public-folder": {},
+    "collectionFS": {},
+    "HTML5-History-API": {},
+    "iron-router": {},
+    "page-js-ie-support": {},
+    "spin": {}
   }
 }
